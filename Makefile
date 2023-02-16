@@ -3,109 +3,113 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: mmosca <mmosca@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/16 16:15:35 by wangthea          #+#    #+#              #
-#    Updated: 2023/02/16 17:28:34 by wangthea         ###   ########.fr        #
+#    Created: 2023/02/16 19:56:24 by mmosca            #+#    #+#              #
+#    Updated: 2023/02/16 20:51:10 by mmosca           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+## -- Includes
 
-NAME =				so_long
+include config/headers.mk
+include config/sources.mk
 
-HEADERS =			includes/enums.h		\
-					includes/prototypes.h	\
-					includes/so_long.h		\
-					includes/structures.h	\
+## -- Variables
 
-SOURCES =			sources/parsing/backtrack_map.c	\
-					sources/parsing/check_map.c		\
-					sources/parsing/errors.c		\
-					sources/parsing/get_map.c		\
-					sources/parsing/utils_check.c	\
-					sources/utils/utils.c			\
-					sources/so_long.c				\
-					
-UNAME := 			$(shell uname)
+## - Properties
 
-LIBFT =				librairies/libft/libft.a
-					
-OBJECTS =			$(SOURCES:.c=.o)
+OS			:=	$(shell uname)
+NAME		:=	so_long
+DEBUG		:=	no
 
-DFLAGS	=			-g3 -fsanitize=address
-CFLAGS	= 			-Wall -Wextra -Werror -I librairies/libft -I includes $(DFLAGS)
+## - Directories
 
-ifeq ($(UNAME), Linux)
-MLX_FLAGS =	-L	librairies/mlx_linux -l Xext -l X11 -l m
-MLX =		librairies/mlx_linux/libmlx.a
-CFLAGS	= 	-Wall -Wextra -Werror -I librairies/mlx_linux -I librairies/libft -I includes $(DFLAGS)
+SRC_DIR		:=	src
+INC_DIR		:=	inc
+LIB_DIR		:=	lib
+OBJ_DIR		:=	.object
+LIBFT_DIR	:=	$(LIB_DIR)/libft
+
+ifeq ($(OS), Darwin)
+MLX_DIR 	:=	$(LIB_DIR)/mlx_mac
+else ifeq ($(OS), Linux)
+MLX_DIR 	:=	$(LIB_DIR)/mlx_linux
 endif
 
-ifeq ($(UNAME), Darwin)
-MLX_FLAGS =	-L librairies/mlx_mac -l mlx -framework OpenGL -framework AppKit
-MLX =		librairies/mlx_mac/libmlx.a
-CFLAGS	= 	-Wall -Wextra -Werror -I librairies/mlx_mac -I librairies/libft -I includes $(DFLAGS)
+## - Compilation Flags
+
+CFLAGS		:=	-Wall -Wextra -Werror -O2 -pipe -I $(INC_DIR) -I $(LIBFT_DIR) -I $(MLX_DIR)
+DFLAGS		:=	-g3 -fsanitize=address
+MLX_FLAGS	:=	-L $(MLX_DIR)
+
+ifeq ($(DEBUG), yes)
+CFLAGS 		+=	$(DFLAGS)
 endif
 
-ifeq ($(UNAME), Linux)
-all: mlx_linux
+ifeq ($(OS), Darwin)
+MLX_FLAGS 	+=	-l mlx -framework OpenGL -framework AppKit
+else ifeq ($(OS), Linux)
+MLX_FLAGS 	+=	-l Xext -l X11 -l m
 endif
 
-ifeq ($(UNAME), Darwin)
-all: mlx_mac
-endif
+## - Librairies
 
-all :	lib
+LIBFT		:=	$(LIBFT_DIR)/libft.a
+MLX			:=	$(MLX_DIR)/libmlx.a
+
+## - Compilation
+
+OBJECTS		:=	$(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
+
+## -- Rules
+
+.DEFAULT_GOAL := all
+
+## - Compilations
+
+.PHONY: all
+all: ## Run the compilation of all necessaries files for the program
+	$(MAKE) libs
 	$(MAKE) $(NAME)
 
-%.o : %.c $(HEADERS)
+$(OBJ_DIR)/%.o: %.c $(HEADERS) $(LIBFT) $(MLX)
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJECTS) $(LIBFT) $(MLX)
+$(NAME): $(OBJECTS)
 	$(CC) $(CFLAGS) $(MLX_FLAGS) $^ -o $@
 
-lib :
-	$(MAKE) -C ./librairies/libft
+.PHONY: libs
+libs: ## Compile alls necessary librairies
+	$(MAKE) -C $(LIBFT_DIR)
+	$(MAKE) -C $(MLX_DIR)
 
-mlx_linux :
-	$(MAKE) -C ./librairies/mlx_linux
+.PHONY: debug
+debug: ## Run the compilation of the project with debug flags
+	$(MAKE) re DEBUG=yes
 
-mlx_mac :
-	$(MAKE) -C ./librairies/mlx_mac
-	
-norme :
-	norminette includes librairies/libft sources
-
-ifeq ($(UNAME), Linux)
-clean :
-	$(MAKE) -C librairies/libft clean
-	$(MAKE) -C librairies/mlx_linux clean
-	$(RM) $(OBJECTS)
-endif
-
-ifeq ($(UNAME), Darwin)
-clean :
-	$(MAKE) -C librairies/libft clean
-	$(MAKE) -C librairies/mlx_mac clean
-	$(RM) $(OBJECTS)
-endif
-
-ifeq ($(UNAME), Linux)
-fclean : clean
-	$(MAKE) -C librairies/libft fclean
-	$(MAKE) -C librairies/mlx_linux clean
-	$(RM) $(NAME)
-endif
-
-ifeq ($(UNAME), Darwin)
-fclean : clean
-	$(MAKE) -C librairies/libft fclean
-	$(MAKE) -C librairies/mlx_mac clean
-	$(RM) $(NAME)
-endif
-
-re : fclean
+.PHONY: re
+re: ## Re-run the compilation of all project
+	$(MAKE) fclean
 	$(MAKE) all
 
-.PHONY: all lib mlx_linux mlx_mac norme clean fclean re
- 
+## - Cleaning
+
+.PHONY: clean
+clean: ## Clean objects files
+	$(MAKE) -C $(LIBFT_DIR) clean
+	$(MAKE) -C $(MLX_DIR) clean
+	$(RM) $(OBJECTS)
+
+.PHONY: fclean
+fclean: ## Clean objects, librairies & executable files
+	$(MAKE) clean
+	$(MAKE) -C $(LIBFT_DIR) fclean
+	$(RM) $(NAME)
+
+## - Utilities
+
+.PHONY: norm
+norm: ## Run the norminette script
+	norminette $(INC_DIR) $(LIBFT_DIR) $(SRC_DIR)
