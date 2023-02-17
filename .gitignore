@@ -53,3 +53,5 @@ dkms.conf
 
 # Parasite
 .DS_Store
+.idea/
+so_long
