@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   create_img.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 16:47:16 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/17 13:53:27 by twang            ###   ########.fr       */
+/*   Created: 2023/02/17 13:28:45 by twang             #+#    #+#             */
+/*   Updated: 2023/02/17 17:38:29 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	set_struct_to_zero(t_game *game)
-{
-	ft_memset(game, 0, sizeof(t_game));
-	ft_memset(&game->map, 0, sizeof(t_map));
-	ft_memset(&game->set, 0, sizeof(t_set));
-	ft_memset(&game->image, 0, sizeof(t_image));
-	ft_memset(&game->texture, 0, sizeof(t_texture));
-}
+/*
 
-void	free_and_exit(t_game *game)
+pixel_get
+pixel_print
+
+*/
+
+void    new_image(t_game *game)
 {
-	ft_free((void **)game->map.map, game->map.map_heigth);
-	exit (404);
+    game->image.image = mlx_new_image(game->set.mlx, game->set.win_width,
+        game->set.win_heigth);
+	if (!game->image.image)
+		free_and_exit(&game);
+	game->image.address = mlx_get_data_addr(game->image.image,
+		&game->image.bits_per_pixel, &game->image.line_length,
+        &game->image.endian);
+    if (!game->image.address)
+		free_and_exit(&game);
 }

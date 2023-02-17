@@ -3,14 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:30:28 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/07 11:37:11 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/17 15:54:28 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	format_display_errors(t_errors error_status, t_game *game)
+{
+	if (game->parse_error.is_valid == true)
+	{
+		ft_dprintf(2, "Error\n");
+		game->parse_error.is_valid = false;
+	}
+	if (error_status == no_map)
+		ft_dprintf(2, "warning: the map is non-existant.\n");
+	if (error_status == bad_size)
+		ft_dprintf(2, "warning: the map is too small.\n");
+	if (error_status == bad_format)
+	{
+		ft_dprintf(2, "warning: the map should be a rectangle.\n");
+		ft_dprintf(2, "warning: please check carefully the map format ");
+		ft_dprintf(2, "before further tests.\n");
+	}
+}
 
 void	char_display_errors(t_errors error_status, t_game *game)
 {
@@ -31,14 +50,6 @@ void	char_display_errors(t_errors error_status, t_game *game)
 		ft_dprintf(2, "warning: the map should have only one exit.\n");
 	if (error_status == have_bad_char)
 		ft_dprintf(2, "warning: the map contains unrecognized characters.\n");
-	if (error_status == bad_size)
-		ft_dprintf(2, "warning: the map is too small.\n");
-	if (error_status == bad_format)
-	{
-		ft_dprintf(2, "warning: the map should be a rectangle.\n");
-		ft_dprintf(2, "warning: please check carefully the map format ");
-		ft_dprintf(2, "before further tests.\n");
-	}
 }
 
 void	walls_display_errors(t_errors error_status, t_game *game)

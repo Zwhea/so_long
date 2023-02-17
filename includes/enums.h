@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enums.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:01:25 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/01 18:43:21 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/17 15:13:11 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef enum e_errors
 	no_exit,
 	too_much_exit,
 	have_bad_char,
+	no_map,
 	bad_size,
 	bad_format,
 	top_border,

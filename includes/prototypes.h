@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/16 18:42:29 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/17 15:54:51 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	check_solvability(t_game *game);
 /*---------------------------------------------------------------------utils--*/
 
 void	set_struct_to_zero(t_game *game);
+void	format_display_errors(t_errors error_status, t_game *game);
 void	char_display_errors(t_errors error_status, t_game *game);
 void	walls_display_errors(t_errors error_status, t_game *game);
 void	unsolvable_display_errors(t_game *game);

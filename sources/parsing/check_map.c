@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:27:03 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/07 11:42:02 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/17 15:56:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,13 @@ static void	check_size(t_game *game)
 	while (game->map.map[i])
 		i++;
 	game->map.map_heigth = i;
+	if (game->map.map_heigth == 0)
+	{
+		format_display_errors(no_map, game);
+		free_and_exit(game);
+	}
 	if (game->map.map_heigth < 3 || game->map.map_width < 5)
-		char_display_errors(bad_size, game);
+		format_display_errors(bad_size, game);
 }
 
 static void	check_format(t_game *game)
@@ -34,7 +39,7 @@ static void	check_format(t_game *game)
 	{
 		if (ft_strlen(game->map.map[i]) != game->map.map_width)
 		{
-			char_display_errors(bad_format, game);
+			format_display_errors(bad_format, game);
 			free_and_exit(game);
 		}
 		i++;
