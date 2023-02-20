@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:28:45 by twang             #+#    #+#             */
-/*   Updated: 2023/02/20 18:14:00 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:05:22 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ void	display_wall(t_game *game, int i, int j)
 			display_image(game, game->texture.botright_corner, i, j);
 		else if (game->map.map[i + 1][j] == wall && game->map.map[i - 1][j] == wall && game->map.map[i][j + 1] != wall && game->map.map[i][j - 1] != wall)
 			display_image(game, game->texture.middle_border, i, j);
+		else if (game->map.map[i + 1][j] != wall && game->map.map[i - 1][j] == wall && game->map.map[i][j + 1] != wall && game->map.map[i][j - 1] != wall)
+			display_image(game, game->texture.middle_border_up, i, j);
+		else if (game->map.map[i + 1][j] == wall && game->map.map[i - 1][j] != wall && game->map.map[i][j + 1] != wall && game->map.map[i][j - 1] != wall)
+			display_image(game, game->texture.middle_border_down, i, j);
 		else
 			display_image(game, game->texture.wall, i, j);
 	}
