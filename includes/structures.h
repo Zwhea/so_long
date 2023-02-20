@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/20 11:18:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/20 14:41:13 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ typedef struct	s_map
 {
 	char		**map;
 	char		**fake_map;
-	size_t		map_width;
-	size_t		map_heigth;
-	size_t		player;
-	size_t		pos_x_player;
-	size_t		pos_y_player;
-	size_t		collectibles;
-	size_t		exit_game;
-	size_t		bad_char;
+	int			map_width;
+	int			map_heigth;
+	int			player;
+	int			pos_x_player;
+	int			pos_y_player;
+	int			collectibles;
+	int			exit_game;
+	int			bad_char;
 }				t_map;
 
 typedef struct	s_parsing_error
@@ -40,17 +40,17 @@ typedef struct	s_set
 {
 	void		*mlx;
 	void		*window;
-	size_t		win_width;
-	size_t		win_heigth;
+	int			win_width;
+	int			win_heigth;
 }				t_set;
 
 typedef struct	s_image
 {
 	void		*image;
 	void		*address;
-	size_t		bits_per_pixel;
-	size_t		line_length;
-	size_t		endian;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
 }				t_image;
 
 typedef struct	s_texture
@@ -61,9 +61,13 @@ typedef struct	s_texture
 	void		*topright_corner;
 	void		*botleft_corner;
 	void		*botright_corner;
+	void		*left_border;
+	void		*right_border;
 	void		*collectible_closed;
-	size_t		img_width;
-	size_t		img_heigth;
+	void		*exit_closed;
+	void		*link;
+	int			img_width;
+	int			img_heigth;
 }				t_texture;
 
 typedef struct		s_game

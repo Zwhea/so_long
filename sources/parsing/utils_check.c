@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:45:49 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/16 18:52:03 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:34:36 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	check_top_bottom_borders(t_game *game)
 
 void	check_left_right_borders(t_game *game)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (i < game->map.map_heigth)

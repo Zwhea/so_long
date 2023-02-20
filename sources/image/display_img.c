@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:28:45 by twang             #+#    #+#             */
-/*   Updated: 2023/02/20 10:39:02 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/20 14:49:36 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,49 @@ void	display_image(t_game *game, void *image, int i, int j)
 		game->texture.img_width * j, game->texture.img_width * i);
 }
 
-/*
-
-void    new_image(t_game *game)
+void	display_wall(t_game *game, int i, int j)
 {
-    game->image.image = mlx_new_image(game->set.mlx, game->set.win_width,
-        game->set.win_heigth);
-	if (!game->image.image)
-		free_and_exit(&game);
-	game->image.address = mlx_get_data_addr(game->image.image,
-		&game->image.bits_per_pixel, &game->image.line_length,
-        &game->image.endian);
-    if (!game->image.address)
-		free_and_exit(&game);
+	if (i == 0 && j == 0)
+		display_image(game, game->texture.topleft_corner, i, j);
+	else if (i == 0 && j == game->map.map_width - 1)
+		display_image(game, game->texture.topright_corner, i, j);
+	else if (i != 0 && i != game->map.map_heigth - 1 && j == 0)
+		display_image(game, game->texture.left_border, i, j);
+	else if (i == game->map.map_heigth - 1 && j == 0)
+		display_image(game, game->texture.botleft_corner, i, j);
+	else if (i == game->map.map_heigth - 1 && j == game->map.map_width - 1)
+		display_image(game, game->texture.botright_corner, i, j);
+	else if (i != 0 && i != game->map.map_heigth - 1
+		&& j == game->map.map_width - 1)
+		display_image(game, game->texture.right_border, i, j);
+	else
+		display_image(game, game->texture.wall, i, j);
 }
 
-*/
+void	display_collectible(t_game *game, int i, int j)
+{
+	/*
+	si les collectibles sont recuperes ou non:
+	- affiche collectible closed == pas recup
+	- affiche collectible open == recup
+	*/
+	display_image(game, game->texture.collectible_closed, i, j);
+}
 
+void	display_exit_game(t_game *game, int i, int j)
+{
+	/*
+	si les collectibles sont recuperes ou non:
+	- affiche exit_closed == pas recup
+	- affiche exit open == tout recup
+	*/
+	display_image(game, game->texture.exit_closed, i, j);
+}
 
+void	display_player(t_game *game, int i, int j)
+{
+	/*
+		voir comment afficher les mouvements!! 
+	*/
+	display_image(game, game->texture.link, i, j);
+}

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:31:09 by twang             #+#    #+#             */
-/*   Updated: 2023/02/20 11:27:49 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/20 14:55:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void	xpm_wall_get(t_game *game)
 	game->texture.botright_corner = mlx_xpm_file_to_image(game->set.mlx,
 		"./assets/xpm/botright_corner.xpm", &game->texture.img_width,
 		&game->texture.img_heigth);
+	game->texture.left_border = mlx_xpm_file_to_image(game->set.mlx,
+		"./assets/xpm/left_border.xpm", &game->texture.img_width,
+		&game->texture.img_heigth);
+	game->texture.right_border = mlx_xpm_file_to_image(game->set.mlx,
+		"./assets/xpm/right_border.xpm", &game->texture.img_width,
+		&game->texture.img_heigth);
 }
 
 void	xpm_assets_get(t_game *game)
@@ -43,13 +49,14 @@ void	xpm_assets_get(t_game *game)
 	game->texture.collectible_closed = mlx_xpm_file_to_image(game->set.mlx,
 		"./assets/xpm/collectible_closed.xpm", &game->texture.img_width,
 		&game->texture.img_heigth);
+	game->texture.exit_closed = mlx_xpm_file_to_image(game->set.mlx,
+		"./assets/xpm/exit_closed_part1.xpm", &game->texture.img_width,
+		&game->texture.img_heigth);
 }
 
-/* 
 void	xpm_character_get(t_game *game)
 {
 	game->texture.link = mlx_xpm_file_to_image(game->set.mlx,
-		"./assets/xpm/grass.xpm", &game->texture.img_width,
+		"./assets/xpm/link.xpm", &game->texture.img_width,
 		&game->texture.img_heigth);
 }
-*/

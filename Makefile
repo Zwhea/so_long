@@ -5,12 +5,10 @@
 #                                                     +:+ +:+         +:+      #
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/16 16:15:35 by wangthea          #+#    #+#              #
-#    Updated: 2023/02/20 10:20:00 by twang            ###   ########.fr        #
+#    Created: Invalid date        by                   #+#    #+#              #
+#    Updated: 2023/02/20 13:34:29 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-
 
 NAME =				so_long
 
@@ -19,11 +17,15 @@ HEADERS =			includes/enums.h		\
 					includes/so_long.h		\
 					includes/structures.h	\
 
-SOURCES =			sources/parsing/backtrack_map.c	\
+SOURCES =			sources/image/display_img.c		\
+					sources/image/texture_init.c 	\
+					sources/parsing/backtrack_map.c	\
 					sources/parsing/check_map.c		\
 					sources/parsing/errors.c		\
 					sources/parsing/get_map.c		\
 					sources/parsing/utils_check.c	\
+					sources/render/init_mlx.c		\
+					sources/render/render_game.c	\
 					sources/utils/utils.c			\
 					sources/so_long.c				\
 					
@@ -56,7 +58,7 @@ ifeq ($(UNAME), Darwin)
 all: mlx_mac
 endif
 
-all :	lib
+all : lib
 	$(MAKE) $(NAME)
 
 %.o : %.c $(HEADERS)

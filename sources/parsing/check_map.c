@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:27:03 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/17 15:56:37 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/20 12:33:27 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	check_size(t_game *game)
 
 static void	check_format(t_game *game)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (game->map.map[i])

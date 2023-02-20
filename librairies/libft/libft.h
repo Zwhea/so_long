@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:34:09 by twang             #+#    #+#             */
-/*   Updated: 2023/01/31 13:23:14 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/20 12:33:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void		ft_bzero(void *s, size_t n);
 
 /*---------------------------------------------------string check functions---*/
 
-size_t		ft_strlen(const char *s);
+int		ft_strlen(const char *s);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
 int			ft_strcmp(const char *s1, const char *s2);
