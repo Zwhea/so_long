@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmosca <mmosca@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:33:27 by mmosca            #+#    #+#             */
-/*   Updated: 2023/02/17 10:17:58 by mmosca           ###   ########.fr       */
+/*   Updated: 2023/02/20 20:11:23 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static bool	check_if_arguments_is_valid(int32_t argc, char **argv)
 		warn("the program will only use the first file");
 	if (!check_extension(argv[1], ".ber"))
 	{
-		ft_dprintf(2, RED"Error\n"END);
 		warn("the file must have .ber type");
 		usage();
 		return (false);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mmosca <mmosca@student.42lyon.fr>          +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 21:05:34 by mmosca            #+#    #+#              #
-#    Updated: 2023/02/16 21:39:45 by mmosca           ###   ########.fr        #
+#    Updated: 2023/02/20 19:13:45 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ endif
 ## - Librairies
 
 LIBFT		:=	$(LIBFT_DIR)/libft.a
+MLX			:=	$(MLX_DIR)/libmlx.a
 
 ## - Compilation
 
