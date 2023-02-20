@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture_init.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:31:09 by twang             #+#    #+#             */
-/*   Updated: 2023/02/20 16:16:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/20 18:07:24 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,24 @@ void	xpm_wall_get(t_game *game)
 		&game->texture.img_heigth);
 	game->texture.right_border = mlx_xpm_file_to_image(game->set.mlx,
 		"./assets/xpm/right_border.xpm", &game->texture.img_width,
+		&game->texture.img_heigth);
+	game->texture.column = mlx_xpm_file_to_image(game->set.mlx,
+		"./assets/xpm/column.xpm", &game->texture.img_width,
+		&game->texture.img_heigth);
+	game->texture.middle_border = mlx_xpm_file_to_image(game->set.mlx,
+		"./assets/xpm/middle_border.xpm", &game->texture.img_width,
+		&game->texture.img_heigth);
+	game->texture.middle_border_down = mlx_xpm_file_to_image(game->set.mlx,
+		"./assets/xpm/middle_border_down.xpm", &game->texture.img_width,
+		&game->texture.img_heigth);
+	game->texture.middle_border_up = mlx_xpm_file_to_image(game->set.mlx,
+		"./assets/xpm/middle_border_up.xpm", &game->texture.img_width,
+		&game->texture.img_heigth);
+	game->texture.middle_down = mlx_xpm_file_to_image(game->set.mlx,
+		"./assets/xpm/middle_down.xpm", &game->texture.img_width,
+		&game->texture.img_heigth);
+	game->texture.middle_up = mlx_xpm_file_to_image(game->set.mlx,
+		"./assets/xpm/middle_up.xpm", &game->texture.img_width,
 		&game->texture.img_heigth);
 }
 

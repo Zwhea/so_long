@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/20 14:41:13 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/20 18:06:03 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,12 @@ typedef struct	s_texture
 	void		*botright_corner;
 	void		*left_border;
 	void		*right_border;
+	void		*middle_down;
+	void		*middle_up;
+	void		*middle_border_down;
+	void		*middle_border_up;
+	void		*middle_border;
+	void		*column;
 	void		*collectible_closed;
 	void		*exit_closed;
 	void		*link;
