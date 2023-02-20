@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/17 17:00:48 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/20 11:18:29 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,12 @@ typedef struct	s_image
 typedef struct	s_texture
 {
 	void		*grass;
+	void		*wall;
+	void		*topleft_corner;
+	void		*topright_corner;
+	void		*botleft_corner;
+	void		*botright_corner;
+	void		*collectible_closed;
 	size_t		img_width;
 	size_t		img_heigth;
 }				t_texture;

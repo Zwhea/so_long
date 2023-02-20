@@ -6,11 +6,17 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:30:03 by twang             #+#    #+#             */
-/*   Updated: 2023/02/17 13:48:41 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/20 11:30:00 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-/*destroy img
-free?*/
+/*
+destroy_image
+destroy_display
+
+free(mlx);
+free(window);
+free(map); // free and exit
+*/

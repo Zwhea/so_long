@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:17:53 by twang             #+#    #+#             */
-/*   Updated: 2023/02/17 16:47:26 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/20 11:28:08 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,16 @@ void    init_mlx(t_game *game)
         game->set.win_heigth, "so_long");
 }
 
+void	init_textures(t_game *game)
+{
+	xpm_background_get(game);
+	xpm_wall_get(game);
+	xpm_assets_get(game);
+}
+
 void    init_set(t_game *game)
 {
     init_struct_set(game);
     init_mlx(game);
+    init_textures(game);
 }
