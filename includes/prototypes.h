@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/20 14:50:32 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/20 16:22:22 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	display_player(t_game *game, int i, int j);
 void	xpm_background_get(t_game *game);
 void	xpm_wall_get(t_game *game);
 void	xpm_assets_get(t_game *game);
+void	xpm_character_get(t_game *game);
 
 /*---------------------------------------------------------------------utils--*/
 
