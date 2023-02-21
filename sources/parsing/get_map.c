@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:15:32 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/17 16:01:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/21 17:09:14 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static char	*get_map(char *av, char *tmp_map)
 	return (tmp_map);
 }
 
-void	initialize_map(char *av, t_game *game)
+static void	initialize_map(char *av, t_game *game)
 {
 	char	*tmp_map;
 	char	*tmp_fakemap;
@@ -87,22 +87,8 @@ void	initialize_map(char *av, t_game *game)
 		exit (2);
 }
 
-void	is_valid_argument(int ac, char **av)
+void	parse_map(t_game *game, char *av)
 {
-	if (ac == 1)
-	{
-		ft_dprintf(2, "Error\n");
-		ft_dprintf(2, "warning: so_long must include a map\n");
-		ft_dprintf(2, "usage: ./so_long \"file_name.ber\"\n");
-		exit (1);
-	}
-	else if (ac > 2)
-		ft_dprintf(2, "warning: the program will only use the first file\n");
-	if (!check_extension(av[1], ".ber"))
-	{
-		ft_dprintf(2, "Error\n");
-		ft_dprintf(2, "warning: the file must have .ber type\n");
-		ft_dprintf(2, "usage: ./so_long \"file_name.ber\" \n");
-		exit (1);
-	}
+	initialize_map(av, game);
+	check_map(game);
 }

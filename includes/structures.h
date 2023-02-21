@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/21 09:49:30 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/21 17:53:29 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,50 +44,54 @@ typedef struct	s_set
 	int			win_heigth;
 }				t_set;
 
-typedef struct	s_image
+typedef struct	s_walls
 {
-	void		*image;
-	void		*address;
-	int			bits_per_pixel;
-	int			line_length;
-	int			endian;
-}				t_image;
+	void		*wall;
+	void		*column;
+	void		*b_bot_left;
+	void		*b_bot_right;
+	void		*b_left_extr;
+	void		*b_left;
+	void		*b_mid_bot;
+	void		*b_mid_left;
+	void		*b_mid_right;
+	void		*b_mid_top;
+	void		*b_right_extr;
+	void		*b_right;
+	void		*b_top_left;
+	void		*b_top_right;
+	void		*i_bot_extr;
+	void		*i_bot_left;
+	void		*i_bot_right;
+	void		*i_mid_left;
+	void		*i_mid_right;
+	void		*i_top_extr;
+	void		*i_top_left;
+	void		*i_top_right;
+	void		*in_wall;
+	void		*left_extr;
+	void		*right_extr;
+}				t_walls;
+
+typedef struct	s_player
+{
+	void		*link;
+}				t_player;
+
+typedef struct	s_items
+{
+	void		*grass;
+	void		*collect_open;
+	void		*collect_closed;
+	void		*exit_open;
+	void		*exit_closed;
+}				t_items;
 
 typedef struct	s_texture
 {
-	void		*grass;
-	void		*wall;
-	void		*topleft_corner;
-	void		*topright_corner;
-	void		*botleft_corner;
-	void		*botright_corner;
-	void		*in_botleft_corner;
-	void		*in_botright_corner;
-	void		*in_topleft_corner;
-	void		*in_topright_corner;
-	void		*left_border;
-	void		*right_border;
-	void		*middle_down;
-	void		*middle_up;
-	void		*middle_left;
-	void		*middle_right;
-	void		*middle_border;
-	void		*middle_border_down;
-	void		*middle_border_up;
-	void		*in_middle_left;
-	void		*in_middle_right;
-	void		*left_extr;
-	void		*right_extr;
-	void		*border_left_extr;
-	void		*border_right_extr;
-	void		*column;
-	void		*collectible_closed;
-	void		*collectible_open;
-	void		*exit_closed;
-	void		*exit_open;
-	void		*link;
-	int			img_width;
-	int			img_heigth;
+	t_walls		walls;
+	t_player	player;
+	t_items		items;
 }				t_texture;
 
 typedef struct		s_game
@@ -95,7 +99,6 @@ typedef struct		s_game
 	t_map			map;
 	t_parsing_error	parse_error;
 	t_set			set;
-	t_image			image;
 	t_texture		texture;
 }					t_game;
 

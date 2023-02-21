@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_img.c                                        :+:      :+:    :+:   */
+/*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 12:45:07 by twang             #+#    #+#             */
-/*   Updated: 2023/02/21 19:08:29 by wangthea         ###   ########.fr       */
+/*   Created: 2023/02/21 19:23:53 by wangthea          #+#    #+#             */
+/*   Updated: 2023/02/21 19:24:52 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	display_image(t_game *game, void *image, int i, int j)
+void	xpm_player_get(t_game *g)
 {
-	mlx_put_image_to_window(game->set.mlx, game->set.window, image,
-		IMG_WIDTH * j, IMG_HEIGHT * i);
+	g->texture.player.link = mlx_xpm_file_to_image(g->set.mlx,
+		"./assets/xpm/link.xpm", IMG_WIDTH, IMG_HEIGHT);
 }
+

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/20 16:22:22 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/21 17:15:29 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 /*-------------------------------------------------------------------parsing--*/
 
-void	is_valid_argument(int ac, char **av);
-void	initialize_map(char *av, t_game *game);
+void	parsing(t_game *game, int ac, char **av);
+void	parse_map(t_game *game, char *av);
 void	check_map(t_game *game);
 
 /*-------------------------------------------------------------utils parsing--*/
@@ -45,14 +45,16 @@ void	display_player(t_game *game, int i, int j);
 
 /*------------------------------------------------------------------textures--*/
 
-void	xpm_background_get(t_game *game);
-void	xpm_wall_get(t_game *game);
-void	xpm_assets_get(t_game *game);
-void	xpm_character_get(t_game *game);
+void	xpm_player_get(t_game *g);
+void	xpm_items_get(t_game *g);
+void	xpm_b_walls_get(t_game *g);
+void	xpm_i_walls_get(t_game *g);
 
 /*---------------------------------------------------------------------utils--*/
 
-void	set_struct_to_zero(t_game *game);
+void	init_structs(t_game *game);
+void	warn(char *message);
+void	usage(void);
 void	free_and_exit(t_game *game);
 
 #endif
