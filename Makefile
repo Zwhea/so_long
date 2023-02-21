@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2023/02/20 13:34:29 by twang            ###   ########.fr        #
+#    Updated: 2023/02/21 12:46:06 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ HEADERS =			includes/enums.h		\
 
 SOURCES =			sources/image/display_img.c		\
 					sources/image/texture_init.c 	\
+					sources/image/utils_img.c 		\
 					sources/parsing/backtrack_map.c	\
 					sources/parsing/check_map.c		\
 					sources/parsing/errors.c		\

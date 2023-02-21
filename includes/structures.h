@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/20 18:06:03 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/21 09:49:30 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,30 @@ typedef struct	s_texture
 	void		*topright_corner;
 	void		*botleft_corner;
 	void		*botright_corner;
+	void		*in_botleft_corner;
+	void		*in_botright_corner;
+	void		*in_topleft_corner;
+	void		*in_topright_corner;
 	void		*left_border;
 	void		*right_border;
 	void		*middle_down;
 	void		*middle_up;
+	void		*middle_left;
+	void		*middle_right;
+	void		*middle_border;
 	void		*middle_border_down;
 	void		*middle_border_up;
-	void		*middle_border;
+	void		*in_middle_left;
+	void		*in_middle_right;
+	void		*left_extr;
+	void		*right_extr;
+	void		*border_left_extr;
+	void		*border_right_extr;
 	void		*column;
 	void		*collectible_closed;
+	void		*collectible_open;
 	void		*exit_closed;
+	void		*exit_open;
 	void		*link;
 	int			img_width;
 	int			img_heigth;
