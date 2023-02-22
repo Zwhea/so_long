@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:35:29 by twang             #+#    #+#             */
-/*   Updated: 2023/02/21 17:53:11 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:48:15 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "mlx.h"
-# include "libft.h"
+# include <mlx.h>
+# include <libft.h>
 # include <stdbool.h>
 # include <stdio.h>
 

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   end_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 16:13:32 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/22 15:33:17 by twang            ###   ########.fr       */
+/*   Created: 2023/02/21 22:20:23 by wangthea          #+#    #+#             */
+/*   Updated: 2023/02/22 17:55:42 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-int	main(int ac, char **av)
-{
-	t_game	game;
-
-	init_structs(&game);
-	parsing(&game, ac, av);
-	if (game.parse_error.is_valid == false)
-		free_and_exit(&game);
-	render_game(&game);
-	// mlx_hook(game.set.window, esc_key, 1L<<0, end_game, &game.set)
-	ft_free((void **)game.map.map, game.map.map_heigth);
-	return (0);
-}
+// int	end(t_game *g)
+// {
+// 	ft_free((void **)g->map.map, g->map.map_heigth);
+// 	destroy_images(g);
+// 	mlx_destroy_window(g->set.mlx, g->set.window);
+// 	mlx_destroy_display(g->set.mlx);
+// 	free(g->set.mlx);
+// 	exit(0);
+// }

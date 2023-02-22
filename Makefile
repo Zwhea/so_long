@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2023/02/21 17:27:32 by wangthea         ###   ########.fr        #
+#    Updated: 2023/02/22 17:58:34 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ DEBUG		=	no
 #------------------------------------------------------------------------------#
 
 INC_DIR		=	includes
-LIB_DIR		=	librairies
+LIB_DIR		=	libraries
 SRC_DIR		=	sources
 OBJ_DIR		=	.objects
 LIBFT_DIR	=	$(LIB_DIR)/libft
@@ -37,7 +37,7 @@ endif
 
 #---------------------------------------------------------------------------------------#
 
-CFLAGS		=	-Wall -Wextra -Werror -O2 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)
+CFLAGS		=	-Wall -Wextra -Werror -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)
 DFLAGS		=	-g3 -fsanitize=address
 MLX_FLAGS	=	-L $(MLX_DIR)
 
@@ -48,9 +48,9 @@ CFLAGS 		+=	$(DFLAGS)
 endif
 
 ifeq ($(OS), Darwin)
-MLX_FLAGS 	+=	-l mlx -framework OpenGL -framework AppKit
+MLX_FLAGS 	+= -framework OpenGL -framework AppKit
 else ifeq ($(OS), Linux)
-MLX_FLAGS 	+=	-l Xext -l X11 -l m
+MLX_FLAGS 	+= -l m -l Xext -l X11 -I $(MLX_DIR)
 endif
 
 #---------------------------------------------------------------------------------------#
@@ -72,12 +72,13 @@ all:
 	$(MAKE) libs
 	$(MAKE) $(NAME)
 
-$(OBJ_DIR)/%.o: %.c $(HEADERS) $(LIBFT) $(MLX)
+$(NAME): $(OBJECTS) $(LIBFT) $(MLX)
+	$(CC) $^ $(MLX_FLAGS) -o $@ 
+
+$(OBJ_DIR)/%.o: %.c
 	@ mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJECTS) $(LIBFT)
-	$(CC) $(CFLAGS) $(MLX_FLAGS)  $^ -o $@
 
 libs:
 	$(MAKE) -C $(LIBFT_DIR)

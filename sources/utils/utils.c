@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:47:16 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/21 17:13:19 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:33:17 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include <so_long.h>
+
+void	display_image(t_game *game, void *image, int i, int j)
+{
+	mlx_put_image_to_window(game->set.mlx, game->set.window, image,
+		IMG_WIDTH * j, IMG_HEIGHT * i);
+}
 
 void	init_structs(t_game *game)
 {

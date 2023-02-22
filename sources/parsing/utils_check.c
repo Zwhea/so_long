@@ -6,11 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:45:49 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/20 12:34:36 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/22 15:33:17 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include <so_long.h>
 
 static bool	valid_char(char c)
 {

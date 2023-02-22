@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   end_game.c                                         :+:      :+:    :+:   */
+/*   display_player.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 22:20:23 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/21 22:25:08 by wangthea         ###   ########.fr       */
+/*   Created: 2023/02/22 12:52:15 by twang             #+#    #+#             */
+/*   Updated: 2023/02/22 15:33:17 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include <so_long.h>
 
-int	end(t_game *g)
+void	display_player(t_game *g, int i, int j)
 {
-	ft_free((void **)game.map.map, game.map.map_heigth);
-	destroy_images(g);
-	mlx_destroy_window(g->set.mlx, g->set.window);
-	mlx_destroy_display(g->set.mlx);
-	free(g->set.mlx);
-	exit(0);
+	/*
+		voir comment afficher les mouvements!! 
+	*/
+	display_image(g, g->texture.player.link, i, j);
 }

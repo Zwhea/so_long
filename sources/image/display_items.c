@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   display_items.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 16:13:32 by wangthea          #+#    #+#             */
+/*   Created: 2023/02/22 12:52:03 by twang             #+#    #+#             */
 /*   Updated: 2023/02/22 15:33:17 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-int	main(int ac, char **av)
+void	display_collectible(t_game *g, int i, int j)
 {
-	t_game	game;
+	/*
+	si les collectibles sont recuperes ou non:
+	- affiche collectible closed == pas recup
+	- affiche collectible open == recup
+	*/
+	display_image(g, g->texture.items.collect_closed, i, j);
+}
 
-	init_structs(&game);
-	parsing(&game, ac, av);
-	if (game.parse_error.is_valid == false)
-		free_and_exit(&game);
-	render_game(&game);
-	// mlx_hook(game.set.window, esc_key, 1L<<0, end_game, &game.set)
-	ft_free((void **)game.map.map, game.map.map_heigth);
-	return (0);
+void	display_exit_game(t_game *g, int i, int j)
+{
+	/*
+	si les collectibles sont recuperes ou non:
+	- affiche exit_closed == pas recup
+	- affiche exit open == tout recup
+	*/
+	display_image(g, g->texture.items.exit_closed, i, j);
 }
