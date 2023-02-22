@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:01:11 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/22 15:33:17 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/22 19:59:13 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ void	parsing(t_game *game, int ac, char **av)
 	if (check_if_arguments_is_valid(ac, av) == false)
 		exit(1);
 	parse_map(game, av[1]);
+	if (game->parse_error.is_valid == false)
+		free_and_exit(game);
 }
