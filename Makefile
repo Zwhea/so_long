@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2023/02/22 17:58:34 by twang            ###   ########.fr        #
+#    Updated: 2023/02/22 19:34:32 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ all:
 	$(MAKE) $(NAME)
 
 $(NAME): $(OBJECTS) $(LIBFT) $(MLX)
-	$(CC) $^ $(MLX_FLAGS) -o $@ 
+	$(CC) $^ $(CFLAGS) $(MLX_FLAGS) -o $@
 
 $(OBJ_DIR)/%.o: %.c
 	@ mkdir -p $(dir $@)

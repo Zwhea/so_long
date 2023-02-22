@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_wall.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:52:20 by twang             #+#    #+#             */
-/*   Updated: 2023/02/22 18:35:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/22 19:26:34 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ static void	display_walls2(t_game *g, int i, int j)
 		display_image(g, g->txtr.walls.b_left, i, j);
 	else if (i != 0 && i != g->map.map_heigth - 1 && j == g->map.map_width - 1)
 		display_image(g, g->txtr.walls.b_right, i, j);
-	else if (i != 0 && i != g->map.map_heigth - 1 && j != g->map.map_width - 1 && j != 0)
+	else if (i != 0 && i != g->map.map_heigth - 1
+		&& j != g->map.map_width - 1 && j != 0)
 		display_walls3(g, i, j);
 	else
 		display_image(g, g->txtr.walls.wall, i, j);
