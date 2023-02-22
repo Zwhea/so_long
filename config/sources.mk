@@ -3,15 +3,17 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 16:02:29 by wangthea          #+#    #+#              #
-#    Updated: 2023/02/22 14:56:50 by twang            ###   ########.fr        #
+#    Updated: 2023/02/22 22:10:25 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES =	sources/events/end_game.c		\
-			sources/image/destroy_img.c		\
+			sources/image/destroy_items.c	\
+			sources/image/destroy_player.c	\
+			sources/image/destroy_wall.c	\
 			sources/image/display_items.c	\
 			sources/image/display_player.c	\
 			sources/image/display_wall.c	\

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/22 19:19:22 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/22 22:13:49 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	unsolvable_display_errors(t_game *game);
 /*-------------------------------------------------------------init settings--*/
 
 void    init_set(t_game *game);
+void	init_structs(t_game *game);
 
 /*-------------------------------------------------------------------display--*/
 
@@ -43,12 +44,16 @@ void    init_set(t_game *game);
 void	render_game(t_game *game);
 
 void	display_image(t_game *game, void *image, int i, int j);
-void	display_walls1(t_game *g, int i, int j);
+void	display_walls(t_game *g, int i, int j);
 void	display_collectible(t_game *game, int i, int j);
 void	display_exit_game(t_game *game, int i, int j);
 void	display_player(t_game *game, int i, int j);
 
-void	destroy_images(t_game *g);
+/*-------------------------------------------------------------------destroy--*/
+
+void	destroy_items(t_game *g);
+void	destroy_player(t_game *g);
+void	destroy_walls(t_game *g);
 
 /*------------------------------------------------------------------textures--*/
 
@@ -65,10 +70,8 @@ int	    end(t_game *g);
 
 /*---------------------------------------------------------------------utils--*/
 
-void	init_structs(t_game *game);
 void	warn(char *message);
 void	usage(void);
 void	free_and_exit(t_game *game);
-int		end(t_game *g);
 
 #endif
