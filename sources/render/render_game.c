@@ -6,16 +6,16 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/02/22 17:59:54 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/22 18:40:03 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-static void render_core(t_game *game)
+static void	render_core(t_game *game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (game->map.map[i])
@@ -23,7 +23,7 @@ static void render_core(t_game *game)
 		j = 0;
 		while (game->map.map[i][j])
 		{
-			display_image(game, game->texture.items.grass, i, j);
+			display_image(game, game->txtr.items.grass, i, j);
 			if (game->map.map[i][j] == wall)
 				display_walls1(game, i, j);
 			if (game->map.map[i][j] == collectible)
@@ -38,7 +38,7 @@ static void render_core(t_game *game)
 	}
 }
 
-void render_game(t_game *game)
+void	render_game(t_game *game)
 {
 	init_set(game);
 	render_core(game);

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/22 14:50:24 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/22 18:34:41 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,21 +87,21 @@ typedef struct	s_items
 	void		*exit_closed;
 }				t_items;
 
-typedef struct	s_texture
+typedef struct	s_txtr
 {
 	t_walls		walls;
 	t_player	player;
 	t_items		items;
 	int			img_w;
 	int			img_h;
-}				t_texture;
+}				t_txtr;
 
 typedef struct		s_game
 {
 	t_map			map;
 	t_parsing_error	parse_error;
 	t_set			set;
-	t_texture		texture;
+	t_txtr			txtr;
 }					t_game;
 
 #endif
