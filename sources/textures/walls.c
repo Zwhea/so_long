@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   walls.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 19:24:12 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/22 18:39:17 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/23 13:09:51 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	xpm_b_leftbot_walls_get(t_game *g)
 			"./assets/xpm/b_top_left.xpm", &g->txtr.img_w, &g->txtr.img_h);
 }
 
-void	xpm_b__righttop_walls_get(t_game *g)
+void	xpm_b_righttop_walls_get(t_game *g)
 {
 	g->txtr.walls.b_bot_right = mlx_xpm_file_to_image(g->set.mlx,
 			"./assets/xpm/b_bot_right.xpm", &g->txtr.img_w, &g->txtr.img_h);
@@ -42,6 +42,8 @@ void	xpm_b__righttop_walls_get(t_game *g)
 			"./assets/xpm/b_right.xpm", &g->txtr.img_w, &g->txtr.img_h);
 	g->txtr.walls.b_top_right = mlx_xpm_file_to_image(g->set.mlx,
 			"./assets/xpm/b_top_right.xpm", &g->txtr.img_w, &g->txtr.img_h);
+	g->txtr.walls.i_mid_cross = mlx_xpm_file_to_image(g->set.mlx,
+			"./assets/xpm/i_mid_cross.xpm", &g->txtr.img_w, &g->txtr.img_h);
 }
 
 void	xpm_i_leftbot_walls_get(t_game *g)

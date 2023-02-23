@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:52:20 by twang             #+#    #+#             */
-/*   Updated: 2023/02/22 21:35:26 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:08:53 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ static void	display_midwalls(t_game *g, int i, int j)
 	else if (g->map.map[i + 1][j] != wall && g->map.map[i - 1][j] == wall
 		&& g->map.map[i][j + 1] == wall && g->map.map[i][j - 1] == wall)
 		display_image(g, g->txtr.walls.b_mid_bot, i, j);
+	else if (g->map.map[i + 1][j] == wall && g->map.map[i - 1][j] == wall
+		&& g->map.map[i][j + 1] == wall && g->map.map[i][j - 1] == wall)
+		display_image(g, g->txtr.walls.i_mid_cross, i, j);
 	else
 		display_image(g, g->txtr.walls.wall, i, j);
 }
@@ -51,7 +54,7 @@ static void	display_specwalls(t_game *g, int i, int j)
 		display_midwalls(g, i, j);
 }
 
-static void display_inwalls(t_game *g, int i, int j)
+static void	display_inwalls(t_game *g, int i, int j)
 {
 	if (g->map.map[i + 1][j] != wall && g->map.map[i - 1][j] != wall
 		&& g->map.map[i][j + 1] != wall && g->map.map[i][j - 1] != wall)

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:34:09 by twang             #+#    #+#             */
-/*   Updated: 2023/02/21 16:39:44 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:11:28 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void		ft_bzero(void *s, size_t n);
 
 /*---------------------------------------------------string check functions---*/
 
-int		ft_strlen(const char *s);
+int			ft_strlen(const char *s);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
 int			ft_strcmp(const char *s1, const char *s2);

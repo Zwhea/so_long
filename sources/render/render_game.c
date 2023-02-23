@@ -6,13 +6,13 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/02/22 21:46:47 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/23 15:49:40 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-static void	render_core(t_game *game)
+void	render_core(t_game *game)
 {
 	int	i;
 	int	j;
@@ -42,6 +42,7 @@ void	render_game(t_game *game)
 {
 	init_set(game);
 	render_core(game);
-	mlx_hook(game->set.window, 17, 1L<<17, end, game);
+	mlx_hook(game->set.window, 17, 1L << 17, end, game);
+	mlx_key_hook(game->set.window, key_press, game);
 	mlx_loop(game->set.mlx);
 }
