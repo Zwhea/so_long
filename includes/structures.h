@@ -3,15 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/23 15:28:40 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/24 13:14:14 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTURES_H
 # define STRUCTURES_H
+
+typedef struct s_player
+{
+	int			player;
+	int			pos_x;
+	int			pos_y;
+	int			moves;
+}				t_player;
+
+typedef struct s_items
+{
+	int			collectibles;
+	int			exit_game;
+	int			bad_char;
+}				t_items;
 
 typedef struct s_map
 {
@@ -19,13 +34,8 @@ typedef struct s_map
 	char		**fake_map;
 	int			map_width;
 	int			map_heigth;
-	int			player;
-	int			pos_x_player;
-	int			pos_y_player;
-	int			collectibles;
-	int			exit_game;
-	int			bad_char;
-	int			moves;
+	t_items		items;
+	t_player	player;
 }				t_map;
 
 typedef struct s_parsing_error
@@ -45,7 +55,7 @@ typedef struct s_set
 	int			win_heigth;
 }				t_set;
 
-typedef struct s_walls
+typedef struct s_t_walls
 {
 	void		*wall;
 	void		*column;
@@ -73,27 +83,27 @@ typedef struct s_walls
 	void		*in_wall;
 	void		*left_extr;
 	void		*right_extr;
-}				t_walls;
+}				t_t_walls;
 
-typedef struct s_player
+typedef struct s_t_player
 {
 	void		*link;
-}				t_player;
+}				t_t_player;
 
-typedef struct s_items
+typedef struct s_t_items
 {
 	void		*grass;
 	void		*collect_open;
 	void		*collect_closed;
 	void		*exit_open;
 	void		*exit_closed;
-}				t_items;
+}				t_t_items;
 
 typedef struct s_txtr
 {
-	t_walls		walls;
-	t_player	player;
-	t_items		items;
+	t_t_walls	t_walls;
+	t_t_player	t_player;
+	t_t_items	t_items;
 	int			img_w;
 	int			img_h;
 }				t_txtr;

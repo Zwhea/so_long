@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/23 15:55:41 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/24 14:15:46 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,11 @@ void	xpm_i_righttop_walls_get(t_game *g);
 
 int		key_press(t_keycode key_code, t_game *game);
 int		end(t_game *g);
+
+void    tile_is_space(t_game *g, int i, int j);
+void    tile_is_closed_collect(t_game *g, int i, int j);
+void    tile_is_open_collect(t_game *g, int i, int j);
+void    tile_is_exit(t_game *g, int i, int j);
 
 /*---------------------------------------------------------------------utils--*/
 

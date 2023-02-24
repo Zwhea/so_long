@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:45:49 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/22 15:33:17 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/24 13:07:27 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static bool	valid_char(char c)
 static void	check_char(t_game *game, char c)
 {
 	if (c == player)
-		game->map.player += 1;
+		game->map.player.player += 1;
 	else if (c == collectible)
-		game->map.collectibles += 1;
+		game->map.items.collectibles += 1;
 	else if (c == exit_game)
-		game->map.exit_game += 1;
+		game->map.items.exit_game += 1;
 	else if (!valid_char(c))
-		game->map.bad_char += 1;
+		game->map.items.bad_char += 1;
 }
 
 void	collect_number_of_chars(t_game *game)
@@ -46,8 +46,8 @@ void	collect_number_of_chars(t_game *game)
 			check_char(game, game->map.map[i][j]);
 			if (game->map.map[i][j] == player)
 			{
-				game->map.pos_y_player = i;
-				game->map.pos_x_player = j;
+				game->map.player.pos_y = i;
+				game->map.player.pos_x = j;
 			}
 			j++;
 		}

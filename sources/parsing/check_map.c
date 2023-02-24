@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:27:03 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/22 15:33:17 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/24 13:06:47 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,17 +49,17 @@ static void	check_format(t_game *game)
 static void	check_characters(t_game *game)
 {
 	collect_number_of_chars(game);
-	if (game->map.player < 1)
+	if (game->map.player.player < 1)
 		char_display_errors(no_player, game);
-	if (game->map.player > 1)
+	if (game->map.player.player > 1)
 		char_display_errors(too_much_player, game);
-	if (game->map.collectibles <= 0)
+	if (game->map.items.collectibles <= 0)
 		char_display_errors(no_collectibles, game);
-	if (game->map.exit_game < 1)
+	if (game->map.items.exit_game < 1)
 		char_display_errors(no_exit, game);
-	if (game->map.exit_game > 1)
+	if (game->map.items.exit_game > 1)
 		char_display_errors(too_much_exit, game);
-	if (game->map.bad_char > 0)
+	if (game->map.items.bad_char > 0)
 		char_display_errors(have_bad_char, game);
 }
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enums.h                                            :+:      :+:    :+:   */
+	/*   enums.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:01:25 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/17 15:13:11 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/24 11:05:51 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,83 @@ typedef enum e_errors
 
 typedef enum e_tile_type
 {
-	space		=	'0',
-	wall		=	'1',
-	collectible	=	'C',
-	player		=	'P',
-	exit_game	=	'E'
+	space			=	'0',
+	wall			=	'1',
+	collectible		=	'C',
+	open_collect	=	'c',
+	player			=	'P',
+	exit_game		=	'E'
 }				t_tile;
 
-typedef enum e_keycode
+typedef enum e_keycode /*for linux keyboard*/
+{
+	a_key		=	97,
+	s_key		=	115,
+	d_key		=	100,
+	f_key		=	102,
+	h_key		=	104,
+	g_key		=	103,
+	z_key		=	122,
+	x_key		=	120,
+	c_key		=	99,
+	v_key		=	118,
+	b_key		=	98,
+	q_key		=	113,
+	w_key		=	119,
+	e_key		=	101,
+	r_key		=	114,
+	y_key		=	121,
+	t_key		=	116,
+	one_key		=	49,
+	two_key		=	50,
+	three_key	=	51,
+	four_key	=	52,
+	six_key		=	54,
+	five_key	=	53,
+	equal_key	=	61,
+	nine_key	=	57,
+	seven_key	=	55,
+	minus_key	=	45,
+	eight_key	=	56,
+	zero_key	=	48,
+	cbracket_key=	93,
+	o_key		=	111,
+	u_key		=	117,
+	obracket_key=	91,
+	i_key		=	105,
+	p_key		=	112,
+	enter_key	=	65293,
+	l_key		=	108,
+	j_key		=	106,
+	quote_key	=	39,
+	k_key		=	107,
+	semico_key	=	59,
+	pipe_key	=	92,
+	comma_key	=	44,
+	slash_key	=	47,
+	n_key		=	110,
+	m_key		=	109,
+	dot_key		=	46,
+	tab_key		=	65289,
+	space_key	=	32,
+	tilde_key	=	96,
+	del_key		=	65288,
+	esc_key		=	65307,
+	left_key	=	65361,
+	right_key	=	65363,
+	down_key	=	65364,
+	up_key		=	65362,
+	ctrl_l_key	=	65507,
+	ctrl_r_key	=	65508,
+	maj_l_key	=	65505,
+	maj_r_key	=	65506,
+	alt_l_key	=	65513,
+	alt_r_key	=	65514,
+	majlock_key	=	65509
+}				t_keycode;
+
+/* 
+typedef enum e_keycode for mac keyboard
 {
 	a_key		=	0,
 	s_key		=	1,
@@ -107,6 +176,6 @@ typedef enum e_keycode
 	opt_r_key	=	262,
 	majlock_key	=	272,
 	fn_key		=	279
-}				t_keycode;
+}				t_keycode; */
 
 #endif

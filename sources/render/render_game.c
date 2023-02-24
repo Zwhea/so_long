@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/02/23 15:49:40 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/24 13:00:56 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	render_core(t_game *game)
 		j = 0;
 		while (game->map.map[i][j])
 		{
-			display_image(game, game->txtr.items.grass, i, j);
+			display_image(game, game->txtr.t_items.grass, i, j);
 			if (game->map.map[i][j] == wall)
 				display_walls(game, i, j);
 			if (game->map.map[i][j] == collectible)

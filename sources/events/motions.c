@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   motions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:59:53 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/23 19:47:39 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/24 16:28:34 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,24 @@ static void	motion_left(t_game *g)
 	int	i;
 	int	j;
 
-	i = g->map.pos_y_player;
-	j = g->map.pos_x_player;
+	i = g->map.player.pos_y;
+	j = g->map.player.pos_x;
 	if (g->map.map[i][j - 1] != wall)
 	{
-		g->map.map[i][j] = space;
-		display_image(g, g->txtr.items.grass, i, j);
-		g->map.map[i][j - 1] = player;
-		g->map.pos_x_player--;
-		display_image(g, g->txtr.player.link, i, j - 1);
-		g->map.moves++;
-		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.moves);
+		if (g->map.items.collectibles == 0)
+		{
+			display_image(g, g->txtr.t_items.exit_open, i, j - 1);
+		}
+		if (g->map.map[i][j - 1] == space)
+			tile_is_space(g, i, j);
+		if (g->map.map[i][j - 1] == collectible)
+			tile_is_closed_collect(g, i, j);
+		if (g->map.map[i][j - 1] == open_collect)
+			tile_is_open_collect(g, i, j);
+		if (g->map.map[i][j - 1] == exit_game)
+			tile_is_exit(g, i, j);
+		g->map.player.moves++;
+		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.player.moves);
 	}
 }
 
@@ -36,17 +43,17 @@ static void	motion_right(t_game *g)
 	int	i;
 	int	j;
 
-	i = g->map.pos_y_player;
-	j = g->map.pos_x_player;
+	i = g->map.player.pos_y;
+	j = g->map.player.pos_x;
 	if (g->map.map[i][j + 1] != wall)
 	{
 		g->map.map[i][j] = space;
-		display_image(g, g->txtr.items.grass, i, j);
+		display_image(g, g->txtr.t_items.grass, i, j);
 		g->map.map[i][j + 1] = player;
-		g->map.pos_x_player++;
-		display_image(g, g->txtr.player.link, i, j + 1);
-		g->map.moves++;
-		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.moves);
+		g->map.player.pos_x++;
+		display_image(g, g->txtr.t_player.link, i, j + 1);
+		g->map.player.moves++;
+		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.player.moves);
 	}
 }
 
@@ -55,17 +62,17 @@ static void	motion_top(t_game *g)
 	int	i;
 	int	j;
 
-	i = g->map.pos_y_player;
-	j = g->map.pos_x_player;
+	i = g->map.player.pos_y;
+	j = g->map.player.pos_x;
 	if (g->map.map[i - 1][j] != wall)
 	{
 		g->map.map[i][j] = space;
-		display_image(g, g->txtr.items.grass, i, j);
+		display_image(g, g->txtr.t_items.grass, i, j);
 		g->map.map[i - 1][j] = player;
-		g->map.pos_y_player--;
-		display_image(g, g->txtr.player.link, i - 1, j);
-		g->map.moves++;
-		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.moves);
+		g->map.player.pos_y--;
+		display_image(g, g->txtr.t_player.link, i - 1, j);
+		g->map.player.moves++;
+		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.player.moves);
 	}
 }
 
@@ -74,17 +81,17 @@ static void	motion_bot(t_game *g)
 	int	i;
 	int	j;
 
-	i = g->map.pos_y_player;
-	j = g->map.pos_x_player;
+	i = g->map.player.pos_y;
+	j = g->map.player.pos_x;
 	if (g->map.map[i + 1][j] != wall)
 	{
 		g->map.map[i][j] = space;
-		display_image(g, g->txtr.items.grass, i, j);
+		display_image(g, g->txtr.t_items.grass, i, j);
 		g->map.map[i + 1][j] = player;
-		g->map.pos_y_player++;
-		display_image(g, g->txtr.player.link, i + 1, j);
-		g->map.moves++;
-		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.moves);
+		g->map.player.pos_y++;
+		display_image(g, g->txtr.t_player.link, i + 1, j);
+		g->map.player.moves++;
+		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.player.moves);
 	}
 }
 
