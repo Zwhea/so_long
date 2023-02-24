@@ -40,8 +40,8 @@ typedef enum e_tile_type
 	player			=	'P',
 	exit_game		=	'E'
 }				t_tile;
-
-typedef enum e_keycode /*for linux keyboard*/
+/*
+typedef enum e_keycode for linux keyboard
 {
 	a_key		=	97,
 	s_key		=	115,
@@ -107,9 +107,9 @@ typedef enum e_keycode /*for linux keyboard*/
 	alt_r_key	=	65514,
 	majlock_key	=	65509
 }				t_keycode;
+*/
 
-/* 
-typedef enum e_keycode for mac keyboard
+typedef enum e_keycode /* for mac keyboard*/
 {
 	a_key		=	0,
 	s_key		=	1,
@@ -176,6 +176,6 @@ typedef enum e_keycode for mac keyboard
 	opt_r_key	=	262,
 	majlock_key	=	272,
 	fn_key		=	279
-}				t_keycode; */
+}				t_keycode; 
 
 #endif

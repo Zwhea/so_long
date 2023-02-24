@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   motion_left.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 13:55:08 by twang             #+#    #+#             */
-/*   Updated: 2023/02/24 16:29:19 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/24 23:24:26 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,18 @@ void    tile_is_closed_collect(t_game *g, int i, int j)
 	g->map.map[i][j - 1] = open_collect;
 	display_image(g, g->txtr.t_items.collect_open, i, j - 1);
 	g->map.items.collectibles--;
+	if (g->map.items.collectibles == 0)
+		display_image(g, g->txtr.t_items.exit_open, i, j + 1);
 }
 
 void    tile_is_open_collect(t_game *g, int i, int j)
 {
     g->map.map[i][j] = player;
 	display_image(g, g->txtr.t_player.link, i, j);
-	g->map.map[i][j - 1] = open_collect;
-	display_image(g, g->txtr.t_items.collect_open, i, j - 1);
 }
 
 void    tile_is_exit(t_game *g, int i, int j)
 {
     g->map.map[i][j] = player;
 	display_image(g, g->txtr.t_player.link, i, j);
-	g->map.map[i][j - 1] = player;
 }
