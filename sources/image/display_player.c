@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_player.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:52:15 by twang             #+#    #+#             */
-/*   Updated: 2023/02/24 13:04:38 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/25 23:50:24 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 void	display_player(t_game *g, int i, int j)
 {
-	/*
-		voir comment afficher les mouvements!! 
-	*/
 	display_image(g, g->txtr.t_player.link, i, j);
 }

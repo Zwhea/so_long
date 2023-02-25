@@ -3,15 +3,18 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 16:02:29 by wangthea          #+#    #+#              #
-#    Updated: 2023/02/24 14:15:01 by twang            ###   ########.fr        #
+#    Updated: 2023/02/25 23:49:48 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES =	sources/events/end_game.c		\
-			sources/events/motion_left.c		\
+			sources/events/motion_left.c	\
+			sources/events/motion_right.c	\
+			sources/events/motion_top.c		\
+			sources/events/motion_bot.c		\
 			sources/events/motions.c		\
 			sources/image/destroy_items.c	\
 			sources/image/destroy_player.c	\

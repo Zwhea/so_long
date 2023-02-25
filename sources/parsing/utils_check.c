@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:45:49 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/24 13:07:27 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/25 19:58:50 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ void	collect_number_of_chars(t_game *game)
 			{
 				game->map.player.pos_y = i;
 				game->map.player.pos_x = j;
+			}
+			if (game->map.map[i][j] == exit_game)
+			{
+				game->map.items.ext_pos_y = i;
+				game->map.items.ext_pos_x = j;
 			}
 			j++;
 		}

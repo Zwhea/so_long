@@ -3,14 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:47:16 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/24 13:10:24 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/25 22:17:57 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
+
+void	check_tiles(t_game *g, int i, int j)
+{
+	if (g->map.map[i][j] == open_collect)
+		display_image(g, g->txtr.t_items.collect_open, i, j);
+	else if (g->map.map[i][j] == exit_game)
+		display_image(g, g->txtr.t_items.exit_closed, i, j);
+	else
+		display_image(g, g->txtr.t_items.grass, i, j);
+}
 
 void	display_image(t_game *game, void *image, int i, int j)
 {

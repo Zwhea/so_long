@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/24 13:14:14 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/25 23:28:14 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ typedef struct s_player
 typedef struct s_items
 {
 	int			collectibles;
-	int			exit_game;
 	int			bad_char;
+	int			exit_game;
+	int			ext_pos_x;
+	int			ext_pos_y;
 }				t_items;
 
 typedef struct s_map
@@ -63,12 +65,14 @@ typedef struct s_t_walls
 	void		*b_bot_right;
 	void		*b_left_extr;
 	void		*b_left;
+	void		*b_left_s;
 	void		*b_mid_bot;
 	void		*b_mid_left;
 	void		*b_mid_right;
 	void		*b_mid_top;
 	void		*b_right_extr;
 	void		*b_right;
+	void		*b_right_s;
 	void		*b_top_left;
 	void		*b_top_right;
 	void		*i_bot_extr;
@@ -88,6 +92,12 @@ typedef struct s_t_walls
 typedef struct s_t_player
 {
 	void		*link;
+	void		*link_left;
+	void		*link_right;
+	void		*link_back;
+	void		*link_collect;
+	void		*link_exit;
+	void		*link_o_exit;
 }				t_t_player;
 
 typedef struct s_t_items
@@ -114,6 +124,7 @@ typedef struct s_game
 	t_parsing_error	parse_error;
 	t_set			set;
 	t_txtr			txtr;
+	bool			end;
 }					t_game;
 
 #endif

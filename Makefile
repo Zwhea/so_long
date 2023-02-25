@@ -6,7 +6,7 @@
 #    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2023/02/22 19:34:32 by wangthea         ###   ########.fr        #
+#    Updated: 2023/02/25 18:11:08 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,10 @@ endif
 CFLAGS		=	-Wall -Wextra -Werror -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)
 DFLAGS		=	-g3 -fsanitize=address
 MLX_FLAGS	=	-L $(MLX_DIR)
+
+ifeq ($(OS), Darwin)
+CFLAGS 		+=	-DMACOS
+endif
 
 #---------------------------------------------------------------------------------------#
 

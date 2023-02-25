@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-	/*   enums.h                                            :+:      :+:    :+:   */
+/*   enums.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 18:01:25 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/24 11:05:51 by twang            ###   ########.fr       */
+/*   Created: 2023/02/25 23:52:28 by wangthea          #+#    #+#             */
+/*   Updated: 2023/02/25 23:53:19 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,22 @@ typedef enum e_tile_type
 	player			=	'P',
 	exit_game		=	'E'
 }				t_tile;
-/*
-typedef enum e_keycode for linux keyboard
+
+# ifndef MACOS
+
+typedef enum e_keycode
 {
 	a_key		=	97,
-	s_key		=	115,
+	b_key		=	98,
+	c_key		=	99,
 	d_key		=	100,
+	s_key		=	115,
 	f_key		=	102,
-	h_key		=	104,
 	g_key		=	103,
+	h_key		=	104,
 	z_key		=	122,
 	x_key		=	120,
-	c_key		=	99,
 	v_key		=	118,
-	b_key		=	98,
 	q_key		=	113,
 	w_key		=	119,
 	e_key		=	101,
@@ -107,9 +109,10 @@ typedef enum e_keycode for linux keyboard
 	alt_r_key	=	65514,
 	majlock_key	=	65509
 }				t_keycode;
-*/
 
-typedef enum e_keycode /* for mac keyboard*/
+# else
+
+typedef enum e_keycode
 {
 	a_key		=	0,
 	s_key		=	1,
@@ -176,6 +179,8 @@ typedef enum e_keycode /* for mac keyboard*/
 	opt_r_key	=	262,
 	majlock_key	=	272,
 	fn_key		=	279
-}				t_keycode; 
+}				t_keycode;
+
+# endif
 
 #endif

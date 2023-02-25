@@ -1,52 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   motion_left.c                                      :+:      :+:    :+:   */
+/*   motion_top.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/24 13:55:08 by twang             #+#    #+#             */
-/*   Updated: 2023/02/25 23:45:45 by wangthea         ###   ########.fr       */
+/*   Created: 2023/02/25 20:19:53 by wangthea          #+#    #+#             */
+/*   Updated: 2023/02/25 23:48:04 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-void	left_tile_is_space(t_game *g, int i, int j)
+void	top_tile_is_space(t_game *g, int i, int j)
 {
 	check_tiles(g, i, j);
-	g->map.player.pos_x--;
-	display_image(g, g->txtr.t_player.link_left, i, j - 1);
+	g->map.player.pos_y--;
+	display_image(g, g->txtr.t_player.link_back, i - 1, j);
 }
 
-void	left_tile_is_closed_collect(t_game *g, int i, int j)
+void	top_tile_is_closed_collect(t_game *g, int i, int j)
 {
 	check_tiles(g, i, j);
-	g->map.map[i][j - 1] = open_collect;
-	g->map.player.pos_x--;
-	display_image(g, g->txtr.t_player.link_collect, i, j - 1);
+	g->map.map[i - 1][j] = open_collect;
+	g->map.player.pos_y--;
+	display_image(g, g->txtr.t_player.link_collect, i - 1, j);
 	g->map.items.collectibles--;
 	if (g->map.items.collectibles == 0)
 		display_image(g, g->txtr.t_items.exit_open, g->map.items.ext_pos_y,
 			g->map.items.ext_pos_x);
 }
 
-void	left_tile_is_open_collect(t_game *g, int i, int j)
+void	top_tile_is_open_collect(t_game *g, int i, int j)
 {
 	check_tiles(g, i, j);
-	g->map.player.pos_x--;
-	display_image(g, g->txtr.t_player.link_collect, i, j - 1);
+	g->map.player.pos_y--;
+	display_image(g, g->txtr.t_player.link_collect, i - 1, j);
 }
 
-void	left_tile_is_exit(t_game *g, int i, int j)
+void	top_tile_is_exit(t_game *g, int i, int j)
 {
 	check_tiles(g, i, j);
-	g->map.player.pos_x--;
+	g->map.player.pos_y--;
 	if (g->map.items.collectibles > 0)
-		display_image(g, g->txtr.t_player.link_exit, i, j - 1);
+		display_image(g, g->txtr.t_player.link_exit, i - 1, j);
 	else
 	{
-		display_image(g, g->txtr.t_player.link_o_exit, i, j - 1);
+		display_image(g, g->txtr.t_player.link_o_exit, i - 1, j);
 		g->end = true;
 		win(g);
 	}

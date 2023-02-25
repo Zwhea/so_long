@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display_wall.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:52:20 by twang             #+#    #+#             */
-/*   Updated: 2023/02/24 13:05:47 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/25 23:33:10 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,19 +83,26 @@ static void	display_inwalls(t_game *g, int i, int j)
 
 static void	display_borders(t_game *g, int i, int j)
 {
-	if (i == 0 && i != g->map.map_heigth - 1 && j != 0
-		&& j != g->map.map_width - 1 && g->map.map[i + 1][j] == wall)
-		display_image(g, g->txtr.t_walls.b_mid_top, i, j);
-	else if (i != 0 && i != g->map.map_heigth - 1 && j == 0
+	if (i != 0 && i != g->map.map_heigth - 1 && j == 0
 		&& j != g->map.map_width - 1 && g->map.map[i][j + 1] == wall)
 		display_image(g, g->txtr.t_walls.b_mid_left, i, j);
 	else if (i != 0 && i != g->map.map_heigth - 1 && j != 0
 		&& j == g->map.map_width - 1 && g->map.map[i][j - 1] == wall)
 		display_image(g, g->txtr.t_walls.b_mid_right, i, j);
 	else if (i != 0 && i != g->map.map_heigth - 1 && j == 0)
-		display_image(g, g->txtr.t_walls.b_left, i, j);
+	{
+		if (i % 3 == 0)
+			display_image(g, g->txtr.t_walls.b_left_s, i, j);
+		else
+			display_image(g, g->txtr.t_walls.b_left, i, j);
+	}
 	else if (i != 0 && i != g->map.map_heigth - 1 && j == g->map.map_width - 1)
-		display_image(g, g->txtr.t_walls.b_right, i, j);
+	{
+		if (i % 2 == 0)
+			display_image(g, g->txtr.t_walls.b_right_s, i, j);
+		else
+			display_image(g, g->txtr.t_walls.b_right, i, j);
+	}
 	else if (i != 0 && i != g->map.map_heigth - 1
 		&& j != g->map.map_width - 1 && j != 0)
 		display_inwalls(g, i, j);
@@ -116,6 +123,9 @@ void	display_walls(t_game *g, int i, int j)
 	else if (i != 0 && i == g->map.map_heigth - 1 && j != 0
 		&& j != g->map.map_width - 1 && g->map.map[i - 1][j] == wall)
 		display_image(g, g->txtr.t_walls.b_mid_bot, i, j);
+	else if (i == 0 && i != g->map.map_heigth - 1 && j != 0
+		&& j != g->map.map_width - 1 && g->map.map[i + 1][j] == wall)
+		display_image(g, g->txtr.t_walls.b_mid_top, i, j);
 	else
 		display_borders(g, i, j);
 }
