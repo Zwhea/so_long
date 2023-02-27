@@ -3,27 +3,31 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2023/02/27 17:37:08 by twang            ###   ########.fr        #
+#    Updated: 2023/02/27 20:56:46 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-include mandatory/config/headers.mk
 include mandatory/config/sources.mk
+include bonus/config_bonus/headers_bonus.mk
+include bonus/config_bonus/sources_bonus.mk
 
 #------------------------------------------------------------------------------#
 
 NAME		=	so_long
 OS			=	$(shell uname)
 DEBUG		=	no
+BONUS		=	no
 
 #------------------------------------------------------------------------------#
 
 INC_DIR		=	mandatory/includes
+B_INC_DIR	=	bonus/includes_bonus
 LIB_DIR		=	libraries
 SRC_DIR		=	mandatory/sources
+B_SRC_DIR	=	bonus/sources_bonus
 OBJ_DIR		=	.objects
 LIBFT_DIR	=	$(LIB_DIR)/libft
 
@@ -37,7 +41,12 @@ endif
 
 #---------------------------------------------------------------------------------------#
 
+ifeq ($(BONUS), no)
 CFLAGS		=	-Wall -Wextra -Werror -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)
+else
+CFLAGS		=	-Wall -Wextra -Werror -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(B_INC_DIR)
+endif
+
 DFLAGS		=	-g3 -fsanitize=address
 MLX_FLAGS	=	-L $(MLX_DIR)
 
@@ -64,7 +73,11 @@ MLX		=	$(MLX_DIR)/libmlx.a
 
 #---------------------------------------------------------------------------------------#
 
+ifeq ($(BONUS), no)
 OBJECTS	=	$(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
+else 
+OBJECTS	=	$(addprefix $(OBJ_DIR)/, $(SOURCES_BONUS:.c=.o))
+endif
 
 #---------------------------------------------------------------------------------------#
 
@@ -89,7 +102,10 @@ libs:
 	$(MAKE) -C $(MLX_DIR)
 
 debug:
-	$(MAKE) re DEBUG=yes
+	$(MAKE) re DEBUG=yes BONUS=yes
+	
+bonus:
+	$(MAKE) re BONUS=yes
 
 re:
 	$(MAKE) fclean
@@ -110,9 +126,9 @@ fclean:
 #---------------------------------------------------------------------------------------#
 
 norme:
-	norminette $(INC_DIR) $(LIBFT_DIR) $(SRC_DIR)
+	norminette $(INC_DIR) $(LIBFT_DIR) $(SRC_DIR) $(B_INC_DIR) $(B_SRC_DIR) 
 
 #---------------------------------------------------------------------------------------#
 
-.PHONY: all libs debug re clean fclean norme
+.PHONY: all libs debug bonus re clean fclean norme
  

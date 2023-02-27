@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_set.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:17:53 by twang             #+#    #+#             */
-/*   Updated: 2023/02/27 16:11:22 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/27 21:02:19 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ static void	init_textures(t_game *game)
 	xpm_b_walls_get(game);
 	xpm_b_i_walls_get(game);
 	xpm_i_walls_get(game);
+	xpm_bonus_player_get(game);
 }
 
 void	init_set(t_game *game)

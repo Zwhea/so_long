@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/27 16:33:48 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/27 21:04:08 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,15 @@ void	destroy_walls(t_game *g);
 
 /*---------------------------------------------------------------------utils--*/
 
-int     count_frame(t_game *g);
 void	check_tiles(t_game *g, int i, int j);
 void	warn(char *message);
 void	usage(void);
 void	win(t_game *g);
 void	free_and_exit(t_game *game);
+
+void	xpm_bonus_player_get(t_game *g);
+int    animate_static_player(t_game *g);
+
+int     count_frame(t_game *g);
 
 #endif

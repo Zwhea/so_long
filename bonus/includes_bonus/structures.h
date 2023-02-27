@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/27 15:38:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/27 21:14:57 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTURES_H
 # define STRUCTURES_H
+
+# define IDLE_NB_SPRITE 3
+# define MV_NB_SPRITE 10
 
 typedef struct s_player
 {
@@ -91,7 +94,7 @@ typedef struct s_t_walls
 
 typedef struct s_t_player
 {
-	void		*link;
+	void		*link; //remplacer par idle[o].sprite
 	void		*link_left;
 	void		*link_right;
 	void		*link_back;
@@ -109,11 +112,21 @@ typedef struct s_t_items
 	void		*you_won;
 }				t_t_items;
 
+typedef struct s_sprite
+{
+	void	*sprite;
+}			t_sprite;
+
 typedef struct s_txtr
 {
 	t_t_walls	t_walls;
 	t_t_player	t_player;
 	t_t_items	t_items;
+	t_sprite	idle[IDLE_NB_SPRITE];
+	t_sprite	mv_left[MV_NB_SPRITE];
+	t_sprite	mv_right[MV_NB_SPRITE];
+	t_sprite	mv_up[MV_NB_SPRITE];
+	t_sprite	mv_down[MV_NB_SPRITE];
 	int			img_w;
 	int			img_h;
 }				t_txtr;

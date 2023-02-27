@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:24:38 by twang             #+#    #+#             */
-/*   Updated: 2023/02/27 16:19:14 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/27 20:51:59 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
-
-int    count_frame(t_game *g)
-{   
-    static int  count_frame;
-    
-    (void) g;
-    printf("test: %d\n", count_frame);
-    count_frame++;
-    count_frame %= 10;
-    return (0);
-}
+// 
+// int    count_frame(t_game *g)
+// {   
+    // static int  frame;
+    // 
+    // (void) g;
+    // printf("test: %d\n", frame);
+    // frame++;
+    // frame %= 10;
+    // return (0);
+// }

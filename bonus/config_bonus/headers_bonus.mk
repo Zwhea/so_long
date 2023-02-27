@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    headers_bonus.mk                                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 16:02:41 by wangthea          #+#    #+#              #
-#    Updated: 2023/02/27 16:13:08 by twang            ###   ########.fr        #
+#    Updated: 2023/02/27 19:18:13 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-HEADERS =			bonus/includes/enums.h		\
-					bonus/includes/prototypes.h	\
-					bonus/includes/so_long.h	\
-					bonus/includes/structures.h	\
-					bonus/includes/verboses.h	
+HEADERS_BONUS =			bonus/includes_bonus/enums.h		\
+						bonus/includes_bonus/prototypes.h	\
+						bonus/includes_bonus/so_long.h		\
+						bonus/includes_bonus/structures.h	\
+						bonus/includes_bonus/verboses.h	

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   end_game.c                                         :+:      :+:    :+:   */
+/*   idle.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 22:20:23 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/27 19:20:21 by wangthea         ###   ########.fr       */
+/*   Created: 2023/02/27 20:41:02 by wangthea          #+#    #+#             */
+/*   Updated: 2023/02/27 21:11:25 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-static void	destroy_images(t_game *g)
-{
-	destroy_items(g);
-	destroy_player(g);
-	destroy_walls(g);
-}
+int    animate_static_player(t_game *g)
+{   
+    static int  frame;
 
-int	end(t_game *g)
-{
-	ft_free((void **)g->map.map, g->map.map_heigth);
-	destroy_images(g);
-	if (g->set.window)
-		mlx_destroy_window(g->set.mlx, g->set.window);
-	// mlx_destroy_display(g->set.mlx);
-	free(g->set.mlx);
-	exit(0);
+    if (frame % 10000 == 0)
+	{
+		display_image(g, g->txtr.idle[frame / 10000].sprite,
+			g->map.player.pos_y, g->map.player.pos_x);
+	}
+    frame++;
+	if (frame >= 30000)
+   		frame = 0;
+    return (0);
 }
