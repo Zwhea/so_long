@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 16:02:29 by wangthea          #+#    #+#              #
-#    Updated: 2023/02/25 23:49:48 by wangthea         ###   ########.fr        #
+#    Updated: 2023/02/27 11:23:47 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,6 @@ SOURCES =	sources/events/end_game.c		\
 			sources/image/destroy_items.c	\
 			sources/image/destroy_player.c	\
 			sources/image/destroy_wall.c	\
-			sources/image/display_items.c	\
-			sources/image/display_player.c	\
 			sources/image/display_wall.c	\
 			sources/parsing/backtrack_map.c	\
 			sources/parsing/check_map.c		\
@@ -35,4 +33,4 @@ SOURCES =	sources/events/end_game.c		\
 			sources/utils/errors.c			\
 			sources/utils/print.c			\
 			sources/utils/utils.c			\
-			sources/so_long.c				
+			sources/so_long.c

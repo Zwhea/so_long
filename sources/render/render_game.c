@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/02/24 13:00:56 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/27 09:38:29 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	render_core(t_game *game)
 			if (game->map.map[i][j] == wall)
 				display_walls(game, i, j);
 			if (game->map.map[i][j] == collectible)
-				display_collectible(game, i, j);
+				display_image(game, game->txtr.t_items.collect_closed, i, j);
 			if (game->map.map[i][j] == exit_game)
-				display_exit_game(game, i, j);
+				display_image(game, game->txtr.t_items.exit_closed, i, j);
 			if (game->map.map[i][j] == player)
-				display_player(game, i, j);
+				display_image(game, game->txtr.t_player.link, i, j);
 			j++;
 		}
 		i++;
