@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 15:57:13 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:05:02 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,6 @@ void	destroy_mv_up_player(t_game *g);
 int		animate_static_player(t_game *g);
 
 int		count_frame(t_game *g);
-void	display_string(t_game	*g);
+void	display_string(t_game *g);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/02/28 15:58:59 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 16:04:53 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-void	display_string(t_game	*g)
+void	display_string(t_game *g)
 {
 	char	*steps;
 	
