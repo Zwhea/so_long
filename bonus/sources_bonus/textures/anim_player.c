@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 11:25:05 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 13:41:51 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 21:01:39 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,26 @@ void	xpm_bonus_idle_player_get(t_game *g)
 			"./assets/xpm/link01.xpm", &g->txtr.img_w, &g->txtr.img_h);
 	g->txtr.idle[2].sprite = mlx_xpm_file_to_image(g->set.mlx,
 			"./assets/xpm/link02.xpm", &g->txtr.img_w, &g->txtr.img_h);
+}
+
+void	xpm_bonus_idle_left_player_get(t_game *g)
+{
+	g->txtr.idle_left[0].sprite = mlx_xpm_file_to_image(g->set.mlx,
+			"./assets/xpm/link_left00.xpm", &g->txtr.img_w, &g->txtr.img_h);
+	g->txtr.idle_left[1].sprite = mlx_xpm_file_to_image(g->set.mlx,
+			"./assets/xpm/link_left01.xpm", &g->txtr.img_w, &g->txtr.img_h);
+	g->txtr.idle_left[2].sprite = mlx_xpm_file_to_image(g->set.mlx,
+			"./assets/xpm/link_left02.xpm", &g->txtr.img_w, &g->txtr.img_h);
+}
+
+void	xpm_bonus_idle_right_player_get(t_game *g)
+{
+	g->txtr.idle_right[0].sprite = mlx_xpm_file_to_image(g->set.mlx,
+			"./assets/xpm/link_right00.xpm", &g->txtr.img_w, &g->txtr.img_h);
+	g->txtr.idle_right[1].sprite = mlx_xpm_file_to_image(g->set.mlx,
+			"./assets/xpm/link_right01.xpm", &g->txtr.img_w, &g->txtr.img_h);
+	g->txtr.idle_right[2].sprite = mlx_xpm_file_to_image(g->set.mlx,
+			"./assets/xpm/link_right02.xpm", &g->txtr.img_w, &g->txtr.img_h);
 }
 
 void	xpm_bonus_mv_down_player_get(t_game *g)

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 20:41:02 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 14:34:30 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 21:05:06 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,21 @@ int	animate_static_player(t_game *g)
 	{
 		if (g->map.map[i][j] == space || g->map.map[i][j] == player)
 		{
-			display_image(g, g->txtr.idle[frame / 10000].sprite,
-				g->map.player.pos_y, g->map.player.pos_x);
+			if (g->directions.down == true || g->map.player.moves == 0)
+			{
+				display_image(g, g->txtr.idle[frame / 10000].sprite,
+					g->map.player.pos_y, g->map.player.pos_x);
+			}
+			else if (g->directions.left == true)
+			{
+				display_image(g, g->txtr.idle_left[frame / 10000].sprite,
+					g->map.player.pos_y, g->map.player.pos_x);
+			}
+			else if (g->directions.right == true)
+			{
+				display_image(g, g->txtr.idle_right[frame / 10000].sprite,
+					g->map.player.pos_y, g->map.player.pos_x);
+			}
 		}
 	}
 	frame++;

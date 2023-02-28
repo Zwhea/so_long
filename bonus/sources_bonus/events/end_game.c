@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:20:23 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 13:39:30 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 21:06:38 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 static void	destroy_animations_images(t_game *g)
 {
 	destroy_idle_player(g);
+	destroy_idle_left_player(g);
+	destroy_idle_right_player(g);
 	destroy_mv_down_player(g);
 	destroy_mv_left_player(g);
 	destroy_mv_right_player(g);

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:59:53 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 16:05:17 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 20:50:53 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void	motion_left(t_game *g)
 
 	i = g->map.player.pos_y;
 	j = g->map.player.pos_x;
+	g->directions.left = true;
 	if (g->map.map[i][j - 1] != wall)
 	{
 		g->map.player.moves++;
@@ -42,6 +43,7 @@ static void	motion_right(t_game *g)
 
 	i = g->map.player.pos_y;
 	j = g->map.player.pos_x;
+	g->directions.right = true;
 	if (g->map.map[i][j + 1] != wall)
 	{
 		g->map.player.moves++;
@@ -88,6 +90,7 @@ static void	motion_bot(t_game *g)
 
 	i = g->map.player.pos_y;
 	j = g->map.player.pos_x;
+	g->directions.down = true;
 	if (g->map.map[i + 1][j] != wall)
 	{
 		g->map.player.moves++;
@@ -111,12 +114,24 @@ int	key_press(t_keycode key_code, t_game *game)
 	if (game->end == true)
 		return (0);
 	if (key_code == a_key || key_code == left_key)
+	{
+		ft_memset(&game->directions, 0, sizeof(t_directions));
 		motion_left(game);
+	}
 	else if (key_code == d_key || key_code == right_key)
+	{
+		ft_memset(&game->directions, 0, sizeof(t_directions));
 		motion_right(game);
+	}
 	else if (key_code == w_key || key_code == up_key)
+	{
+		ft_memset(&game->directions, 0, sizeof(t_directions));
 		motion_top(game);
+	}
 	else if (key_code == s_key || key_code == down_key)
+	{
+		ft_memset(&game->directions, 0, sizeof(t_directions));
 		motion_bot(game);
+	}
 	return (0);
 }

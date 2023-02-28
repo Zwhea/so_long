@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 10:26:44 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 21:22:41 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ typedef struct s_t_walls
 	void		*right_extr;
 }				t_t_walls;
 
+/*structure vie + enemies*/
+
 typedef struct s_t_player
 {
 	void		*link_left;
@@ -122,6 +124,8 @@ typedef struct s_txtr
 	t_t_player	t_player;
 	t_t_items	t_items;
 	t_sprite	idle[IDLE_NB_SPRITE];
+	t_sprite	idle_left[IDLE_NB_SPRITE];
+	t_sprite	idle_right[IDLE_NB_SPRITE];
 	t_sprite	mv_left[MV_NB_SPRITE];
 	t_sprite	mv_right[MV_NB_SPRITE];
 	t_sprite	mv_up[MV_NB_SPRITE];
@@ -130,12 +134,20 @@ typedef struct s_txtr
 	int			img_h;
 }				t_txtr;
 
+typedef struct s_directions
+{
+	bool		left;
+	bool		right;
+	bool		down;
+}				t_directions;
+
 typedef struct s_game
 {
 	t_map			map;
 	t_parsing_error	parse_error;
 	t_set			set;
 	t_txtr			txtr;
+	t_directions	directions;
 	bool			end;
 }					t_game;
 

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:17:53 by twang             #+#    #+#             */
-/*   Updated: 2023/02/28 12:39:56 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 21:06:10 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static void	init_mlx(t_game *game)
 	{
 		free_and_exit(game);
 	}
-	game->set.window = mlx_new_window(game->set.mlx, game->set.win_width,
-			game->set.win_heigth, "so_long");
+	game->set.window = mlx_new_window(game->set.mlx, game->set.win_width + 192,
+			game->set.win_heigth + 192, "so_long");
 }
 
 static void	init_textures(t_game *game)
@@ -37,6 +37,8 @@ static void	init_textures(t_game *game)
 	xpm_b_i_walls_get(game);
 	xpm_i_walls_get(game);
 	xpm_bonus_idle_player_get(game);
+	xpm_bonus_idle_left_player_get(game);
+	xpm_bonus_idle_right_player_get(game);
 	xpm_bonus_mv_down_player_get(game);
 	xpm_bonus_mv_left_player_get(game);
 	xpm_bonus_mv_right_player_get(game);

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:47:16 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/25 22:17:57 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:55:02 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_tiles(t_game *g, int i, int j)
 void	display_image(t_game *game, void *image, int i, int j)
 {
 	mlx_put_image_to_window(game->set.mlx, game->set.window, image,
-		IMG_WIDTH * j, IMG_HEIGHT * i);
+		(IMG_WIDTH * j) + 96, (IMG_HEIGHT * i) + 96);
 }
 
 void	init_structs(t_game *game)

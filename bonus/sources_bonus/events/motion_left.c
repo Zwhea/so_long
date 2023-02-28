@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 13:55:08 by twang             #+#    #+#             */
-/*   Updated: 2023/02/28 10:32:32 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 21:09:51 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	left_tile_is_space(t_game *g, int i, int j)
 {
 	check_tiles(g, i, j);
 	g->map.player.pos_x--;
-	display_image(g, g->txtr.t_player.link_left, i, j - 1);
+	display_image(g, g->txtr.idle_left[0].sprite, i, j - 1);
 }
 
 void	left_tile_is_closed_collect(t_game *g, int i, int j)
