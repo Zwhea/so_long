@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:17:53 by twang             #+#    #+#             */
-/*   Updated: 2023/02/27 21:02:19 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:39:56 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ static void	init_textures(t_game *game)
 	xpm_b_walls_get(game);
 	xpm_b_i_walls_get(game);
 	xpm_i_walls_get(game);
-	xpm_bonus_player_get(game);
+	xpm_bonus_idle_player_get(game);
+	xpm_bonus_mv_down_player_get(game);
+	xpm_bonus_mv_left_player_get(game);
+	xpm_bonus_mv_right_player_get(game);
+	xpm_bonus_mv_up_player_get(game);
 }
 
 void	init_set(t_game *game)

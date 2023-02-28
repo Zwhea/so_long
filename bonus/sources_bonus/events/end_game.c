@@ -6,17 +6,27 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:20:23 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/27 19:20:21 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 13:39:30 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
+
+static void	destroy_animations_images(t_game *g)
+{
+	destroy_idle_player(g);
+	destroy_mv_down_player(g);
+	destroy_mv_left_player(g);
+	destroy_mv_right_player(g);
+	destroy_mv_up_player(g);
+}
 
 static void	destroy_images(t_game *g)
 {
 	destroy_items(g);
 	destroy_player(g);
 	destroy_walls(g);
+	destroy_animations_images(g);
 }
 
 int	end(t_game *g)
@@ -25,7 +35,7 @@ int	end(t_game *g)
 	destroy_images(g);
 	if (g->set.window)
 		mlx_destroy_window(g->set.mlx, g->set.window);
-	// mlx_destroy_display(g->set.mlx);
+	/*mlx_destroy_display(g->set.mlx);*/
 	free(g->set.mlx);
 	exit(0);
 }

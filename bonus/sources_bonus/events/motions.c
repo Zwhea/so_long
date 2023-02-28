@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:59:53 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/25 23:47:30 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 15:56:32 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	motion_left(t_game *g)
 	{
 		g->map.player.moves++;
 		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.player.moves);
+		display_string(g);
 		if (g->map.map[i][j - 1] == collectible)
 			left_tile_is_closed_collect(g, i, j);
 		else if (g->map.map[i][j - 1] == open_collect)
@@ -45,6 +46,7 @@ static void	motion_right(t_game *g)
 	{
 		g->map.player.moves++;
 		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.player.moves);
+		display_string(g);
 		if (g->map.map[i][j + 1] == collectible)
 			right_tile_is_closed_collect(g, i, j);
 		else if (g->map.map[i][j + 1] == open_collect)
@@ -67,6 +69,7 @@ static void	motion_top(t_game *g)
 	{
 		g->map.player.moves++;
 		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.player.moves);
+		display_string(g);
 		if (g->map.map[i - 1][j] == collectible)
 			top_tile_is_closed_collect(g, i, j);
 		else if (g->map.map[i - 1][j] == open_collect)
@@ -89,6 +92,7 @@ static void	motion_bot(t_game *g)
 	{
 		g->map.player.moves++;
 		ft_dprintf(1, BLUE"moves count ="END" %d\n", g->map.player.moves);
+		display_string(g);
 		if (g->map.map[i + 1][j] == collectible)
 			bot_tile_is_closed_collect(g, i, j);
 		else if (g->map.map[i + 1][j] == open_collect)

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/27 21:14:57 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 10:26:44 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ typedef struct s_t_walls
 
 typedef struct s_t_player
 {
-	void		*link; //remplacer par idle[o].sprite
 	void		*link_left;
 	void		*link_right;
 	void		*link_back;

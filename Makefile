@@ -6,10 +6,11 @@
 #    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: Invalid date        by                   #+#    #+#              #
-#    Updated: 2023/02/27 20:56:46 by wangthea         ###   ########.fr        #
+#    Updated: 2023/02/28 12:40:28 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+include mandatory/config/headers.mk
 include mandatory/config/sources.mk
 include bonus/config_bonus/headers_bonus.mk
 include bonus/config_bonus/sources_bonus.mk

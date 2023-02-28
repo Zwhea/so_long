@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   motion_bot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 20:26:51 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/27 13:48:04 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/28 13:39:14 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	bot_tile_is_space(t_game *g, int i, int j)
 {
 	check_tiles(g, i, j);
 	g->map.player.pos_y++;
-	display_image(g, g->txtr.t_player.link, i + 1, j);
+	display_image(g, g->txtr.idle[0].sprite, i + 1, j);
 }
 
 void	bot_tile_is_closed_collect(t_game *g, int i, int j)

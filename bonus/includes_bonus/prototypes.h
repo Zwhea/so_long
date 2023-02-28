@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/27 21:04:08 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/02/28 15:57:13 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,9 +102,21 @@ void	usage(void);
 void	win(t_game *g);
 void	free_and_exit(t_game *game);
 
-void	xpm_bonus_player_get(t_game *g);
-int    animate_static_player(t_game *g);
+void	xpm_bonus_idle_player_get(t_game *g);
+void	xpm_bonus_mv_down_player_get(t_game *g);
+void	xpm_bonus_mv_left_player_get(t_game *g);
+void	xpm_bonus_mv_right_player_get(t_game *g);
+void	xpm_bonus_mv_up_player_get(t_game *g);
 
-int     count_frame(t_game *g);
+void	destroy_idle_player(t_game *g);
+void	destroy_mv_down_player(t_game *g);
+void	destroy_mv_left_player(t_game *g);
+void	destroy_mv_right_player(t_game *g);
+void	destroy_mv_up_player(t_game *g);
+
+int		animate_static_player(t_game *g);
+
+int		count_frame(t_game *g);
+void	display_string(t_game	*g);
 
 #endif

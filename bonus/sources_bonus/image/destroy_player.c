@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   destroy_player.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 21:52:40 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/27 15:13:21 by twang            ###   ########.fr       */
+/*   Updated: 2023/02/28 13:58:07 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	destroy_player(t_game *g)
 {
-	if (g->txtr.t_player.link)
-		mlx_destroy_image(g->set.mlx, g->txtr.t_player.link);
 	if (g->txtr.t_player.link_left)
 		mlx_destroy_image(g->set.mlx, g->txtr.t_player.link_left);
 	if (g->txtr.t_player.link_right)
