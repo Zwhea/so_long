@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/02/28 19:05:45 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:58:41 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ void	display_string(t_game *g)
 	mlx_string_put(g->set.mlx, g->set.window, g->set.win_width - 64,
 		(heigth * 96) - 48, 0xFFFFFF, "Collectibles left");
 	free(steps);
+	free(collectibles_left);
 	steps = NULL;
+	collectibles_left = NULL;
 }
 
 static void	display_background(t_game *game)
@@ -85,6 +87,12 @@ void	render_core(t_game *game)
 				display_image(game, game->txtr.t_items.exit_closed, i, j);
 			if (game->map.map[i][j] == player)
 				display_image(game, game->txtr.idle[0].sprite, i, j);
+			if (game->map.map[i][j] == slimes)
+			{
+				game->map.slimes.pos_y = i;
+				game->map.slimes.pos_x = j;
+				display_image(game, game->txtr.sl_mv_down[0].sprite, i, j);
+			}
 			j++;
 		}
 		i++;

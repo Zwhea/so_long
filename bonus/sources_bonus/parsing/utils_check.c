@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:45:49 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/25 19:58:50 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:24:50 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static bool	valid_char(char c)
 {
 	if (c == space || c == wall || c == collectible || c == exit_game
-		|| c == player)
+		|| c == player || c == slimes)
 		return (true);
 	return (false);
 }
@@ -24,6 +24,8 @@ static void	check_char(t_game *game, char c)
 {
 	if (c == player)
 		game->map.player.player += 1;
+	else if (c == slimes)
+		game->map.slimes.slimes += 1;
 	else if (c == collectible)
 		game->map.items.collectibles += 1;
 	else if (c == exit_game)

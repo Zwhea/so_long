@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enums.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 23:52:28 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/25 23:53:19 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:24:29 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef enum e_tile_type
 	collectible		=	'C',
 	open_collect	=	'c',
 	player			=	'P',
+	slimes			=	'S',
 	exit_game		=	'E'
 }				t_tile;
 

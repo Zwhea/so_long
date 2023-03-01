@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources_bonus.mk                                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 16:02:29 by wangthea          #+#    #+#              #
-#    Updated: 2023/02/28 13:40:05 by wangthea         ###   ########.fr        #
+#    Updated: 2023/03/01 17:53:30 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SOURCES_BONUS =	bonus/sources_bonus/animations/idle.c		\
 				bonus/sources_bonus/image/destroy_anim_player.c	\
 				bonus/sources_bonus/image/destroy_items.c	\
 				bonus/sources_bonus/image/destroy_player.c	\
+				bonus/sources_bonus/image/destroy_slimes.c	\
 				bonus/sources_bonus/image/destroy_wall.c	\
 				bonus/sources_bonus/image/display_wall.c	\
 				bonus/sources_bonus/parsing/backtrack_map.c	\
@@ -28,10 +29,12 @@ SOURCES_BONUS =	bonus/sources_bonus/animations/idle.c		\
 				bonus/sources_bonus/parsing/parsing.c		\
 				bonus/sources_bonus/parsing/utils_check.c	\
 				bonus/sources_bonus/render/init_set.c		\
+				bonus/sources_bonus/render/outcome.c		\
 				bonus/sources_bonus/render/render_game.c	\
 				bonus/sources_bonus/textures/anim_player.c	\
 				bonus/sources_bonus/textures/items.c		\
 				bonus/sources_bonus/textures/player.c		\
+				bonus/sources_bonus/textures/slimes.c		\
 				bonus/sources_bonus/textures/walls.c		\
 				bonus/sources_bonus/utils/errors.c			\
 				bonus/sources_bonus/utils/print.c			\

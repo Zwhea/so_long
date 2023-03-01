@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:13:32 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/25 23:51:57 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:18:15 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,6 @@ int	main(int ac, char **av)
 	render_game(&game);
 	return (0);
 }
+
+/*	TODO: il y a du leaks still reachable dans le cas d'un map unsolvable, verif 
+	free correctement a la fin de parsing*/

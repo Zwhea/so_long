@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 21:03:20 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:52:10 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ void	check_tiles(t_game *g, int i, int j);
 void	warn(char *message);
 void	usage(void);
 void	win(t_game *g);
+void	lose(t_game *g);
 void	free_and_exit(t_game *game);
 
 void	xpm_bonus_idle_player_get(t_game *g);
@@ -111,6 +112,11 @@ void	xpm_bonus_mv_left_player_get(t_game *g);
 void	xpm_bonus_mv_right_player_get(t_game *g);
 void	xpm_bonus_mv_up_player_get(t_game *g);
 
+void	xpm_bonus_mv_down_slimes_get(t_game *g);
+void	xpm_bonus_mv_left_slimes_get(t_game *g);
+void	xpm_bonus_mv_right_slimes_get(t_game *g);
+void	xpm_bonus_mv_up_slimes_get(t_game *g);
+
 void	destroy_idle_player(t_game *g);
 void	destroy_idle_left_player(t_game *g);
 void	destroy_idle_right_player(t_game *g);
@@ -119,6 +125,10 @@ void	destroy_mv_down_player(t_game *g);
 void	destroy_mv_left_player(t_game *g);
 void	destroy_mv_right_player(t_game *g);
 void	destroy_mv_up_player(t_game *g);
+void	destroy_mv_down_slimes(t_game *g);
+void	destroy_mv_left_slimes(t_game *g);
+void	destroy_mv_right_slimes(t_game *g);
+void	destroy_mv_up_slimes(t_game *g);
 
 int		animate_static_player(t_game *g);
 

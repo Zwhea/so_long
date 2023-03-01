@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 21:22:41 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:32:12 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define STRUCTURES_H
 
 # define IDLE_NB_SPRITE 3
+# define SLIME_NB_SPRITE 6
 # define MV_NB_SPRITE 10
 
 typedef struct s_player
@@ -22,7 +23,15 @@ typedef struct s_player
 	int			pos_x;
 	int			pos_y;
 	int			moves;
+	int			lifes;
 }				t_player;
+
+typedef struct s_slimes
+{
+	int			slimes;
+	int			pos_x;
+	int			pos_y;
+}				t_slimes;
 
 typedef struct s_items
 {
@@ -41,6 +50,7 @@ typedef struct s_map
 	int			map_heigth;
 	t_items		items;
 	t_player	player;
+	t_slimes	slimes;
 }				t_map;
 
 typedef struct s_parsing_error
@@ -92,8 +102,6 @@ typedef struct s_t_walls
 	void		*right_extr;
 }				t_t_walls;
 
-/*structure vie + enemies*/
-
 typedef struct s_t_player
 {
 	void		*link_left;
@@ -111,6 +119,7 @@ typedef struct s_t_items
 	void		*exit_open;
 	void		*exit_closed;
 	void		*you_won;
+	void		*game_over;
 }				t_t_items;
 
 typedef struct s_sprite
@@ -130,6 +139,10 @@ typedef struct s_txtr
 	t_sprite	mv_right[MV_NB_SPRITE];
 	t_sprite	mv_up[MV_NB_SPRITE];
 	t_sprite	mv_down[MV_NB_SPRITE];
+	t_sprite	sl_mv_left[SLIME_NB_SPRITE];
+	t_sprite	sl_mv_right[SLIME_NB_SPRITE];
+	t_sprite	sl_mv_up[SLIME_NB_SPRITE];
+	t_sprite	sl_mv_down[SLIME_NB_SPRITE];
 	int			img_w;
 	int			img_h;
 }				t_txtr;

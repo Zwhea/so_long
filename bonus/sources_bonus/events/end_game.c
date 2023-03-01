@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   end_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:20:23 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 21:06:38 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:47:20 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ static void	destroy_animations_images(t_game *g)
 	destroy_mv_left_player(g);
 	destroy_mv_right_player(g);
 	destroy_mv_up_player(g);
+	destroy_mv_down_slimes(g);
+	destroy_mv_left_slimes(g);
+	destroy_mv_right_slimes(g);
+	destroy_mv_up_slimes(g);
 }
 
 static void	destroy_images(t_game *g)
@@ -37,7 +41,7 @@ int	end(t_game *g)
 	destroy_images(g);
 	if (g->set.window)
 		mlx_destroy_window(g->set.mlx, g->set.window);
-	/*mlx_destroy_display(g->set.mlx);*/
+	mlx_destroy_display(g->set.mlx);
 	free(g->set.mlx);
 	exit(0);
 }
