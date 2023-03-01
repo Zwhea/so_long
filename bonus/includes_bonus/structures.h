@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 21:22:41 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/01 15:24:55 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,20 @@
 # define IDLE_NB_SPRITE 3
 # define MV_NB_SPRITE 10
 
+typedef struct s_slimes
+{
+	int			slimes;
+	int			pos_x;
+	int			pos_y;
+}				t_slimes;
+
 typedef struct s_player
 {
 	int			player;
 	int			pos_x;
 	int			pos_y;
 	int			moves;
+	int			lifes;
 }				t_player;
 
 typedef struct s_items
@@ -41,6 +49,7 @@ typedef struct s_map
 	int			map_heigth;
 	t_items		items;
 	t_player	player;
+	t_slimes	slimes;
 }				t_map;
 
 typedef struct s_parsing_error
@@ -91,8 +100,6 @@ typedef struct s_t_walls
 	void		*left_extr;
 	void		*right_extr;
 }				t_t_walls;
-
-/*structure vie + enemies*/
 
 typedef struct s_t_player
 {
