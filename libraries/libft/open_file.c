@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   open_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 11:48:21 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/01 14:52:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/01/31 13:52:09 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	open_file(char *av)
 		close(fd);
 		exit (1);
 	}
+	close(fd);
 	fd = open(av, O_RDONLY, 0644);
 	if (fd == -1)
 	{
