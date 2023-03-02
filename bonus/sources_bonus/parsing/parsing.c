@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:01:11 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/22 19:59:13 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/02 15:38:23 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,6 @@ void	parsing(t_game *game, int ac, char **av)
 	parse_map(game, av[1]);
 	if (game->parse_error.is_valid == false)
 		free_and_exit(game);
+	else if (game->map.slimes.slimes > 0)
+		collect_slimes_info(game);
 }

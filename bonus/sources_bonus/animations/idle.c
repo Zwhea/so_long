@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 20:41:02 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/01 18:15:15 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/02 18:25:22 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int	animate_static_player(t_game *g)
 	j = g->map.player.pos_x;
 	if (frame % 10000 == 0)
 	{
-		display_image(g, g->txtr.sl_mv_down[frame / 10000].sprite,
-			g->map.slimes.pos_y, g->map.slimes.pos_x);
 		if (g->map.map[i][j] == space || g->map.map[i][j] == player)
 		{
 			if (g->directions.down == true || g->map.player.moves == 0)
@@ -36,11 +34,11 @@ int	animate_static_player(t_game *g)
 				display_image(g, g->txtr.idle_left[frame / 10000].sprite,
 					i, j);
 			}
-			else if (g->directions.right == true)
-			{
-				display_image(g, g->txtr.idle_right[frame / 10000].sprite,
-					i, j);
-			}
+			// else if (g->directions.right == true)
+			// {
+				// display_image(g, g->txtr.idle_right[frame / 10000].sprite,
+					// i, j);
+			// }
 		}
 	}
 	frame++;

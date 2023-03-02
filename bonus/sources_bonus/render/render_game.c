@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/03/01 17:58:41 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/02 16:24:36 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,7 @@ void	render_core(t_game *game)
 			if (game->map.map[i][j] == player)
 				display_image(game, game->txtr.idle[0].sprite, i, j);
 			if (game->map.map[i][j] == slimes)
-			{
-				game->map.slimes.pos_y = i;
-				game->map.slimes.pos_x = j;
 				display_image(game, game->txtr.sl_mv_down[0].sprite, i, j);
-			}
 			j++;
 		}
 		i++;

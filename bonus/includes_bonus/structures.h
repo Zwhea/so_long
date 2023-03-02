@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/01 17:32:12 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/02 16:22:33 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,17 @@ typedef struct s_player
 	int			lifes;
 }				t_player;
 
+typedef struct s_slimes_pos
+{
+	int		pos_x;
+	int		pos_y;
+}			t_slimes_pos;
+
 typedef struct s_slimes
 {
-	int			slimes;
-	int			pos_x;
-	int			pos_y;
-}				t_slimes;
+	int				slimes;
+	t_slimes_pos	*slimes_pos;
+}					t_slimes;
 
 typedef struct s_items
 {

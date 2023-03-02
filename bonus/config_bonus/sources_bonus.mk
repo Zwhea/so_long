@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources_bonus.mk                                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 16:02:29 by wangthea          #+#    #+#              #
-#    Updated: 2023/03/01 17:53:30 by twang            ###   ########.fr        #
+#    Updated: 2023/03/02 15:39:25 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SOURCES_BONUS =	bonus/sources_bonus/animations/idle.c		\
 				bonus/sources_bonus/image/display_wall.c	\
 				bonus/sources_bonus/parsing/backtrack_map.c	\
 				bonus/sources_bonus/parsing/check_map.c		\
+				bonus/sources_bonus/parsing/get_enemies.c	\
 				bonus/sources_bonus/parsing/get_map.c		\
 				bonus/sources_bonus/parsing/parsing.c		\
 				bonus/sources_bonus/parsing/utils_check.c	\
