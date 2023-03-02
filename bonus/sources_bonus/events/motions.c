@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:59:53 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/02 18:38:54 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/02 20:49:43 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,9 @@ static void animate_right_move(t_game *g)
 	offset = 0;
 	while (i < 20000)
 	{
-		display_image(g, g->txtr.mv_right[i / 2000].sprite, g->map.player.pos_y, g->map.player.pos_x + offset);
-		// mlx_put_image_to_window(g->set.mlx, g->set.window, g->txtr.mv_right[i / 2000].sprite, ((g->map.player.pos_x) * 96) + 96 + offset, (g->map.player.pos_y * 96)+ 96);
 		if (i % 2000 == 0)
+			mlx_put_image_to_window(g->set.mlx, g->set.window, g->txtr.mv_right[i / 2000].sprite, ((g->map.player.pos_x) * 96) + 96 + offset, (g->map.player.pos_y * 96) + 96);
 			offset = offset + 10;
-		// ft_printf("offset : %d\n", offset);
-		// ft_printf("pos = %d\n", ((g->map.player.pos_x) * 96) + offset);
 		i++;
 	}
 }
