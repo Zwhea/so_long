@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   motion_right.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 19:34:42 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 21:10:17 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/03 11:11:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,20 @@ void	right_tile_is_open_collect(t_game *g, int i, int j)
 	check_tiles(g, i, j);
 	g->map.player.pos_x++;
 	display_image(g, g->txtr.t_player.link_collect, i, j + 1);
+}
+
+void	right_tile_is_slime(t_game *g, int i, int j)
+{
+	check_tiles(g, i, j);
+	g->map.player.pos_x++;
+	g->map.player.lifes--;
+	ft_printf("lifes : %d\n", g->map.player.lifes);
+	if (g->map.player.lifes == 0)
+	{
+		g->end = true;
+		lose(g);
+	}
+	// display_image(g, g->txtr.t_player.link_collect, i, j + 1);
 }
 
 void	right_tile_is_exit(t_game *g, int i, int j)

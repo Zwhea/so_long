@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:59:53 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/03 09:40:06 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/03 11:01:38 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ static void	motion_right(t_game *g)
 			right_tile_is_closed_collect(g, i, j);
 		else if (g->map.map[i][j + 1] == open_collect)
 			right_tile_is_open_collect(g, i, j);
+		else if (g->map.map[i][j + 1] == slimes)
+			right_tile_is_slime(g, i, j);
 		else if (g->map.map[i][j + 1] == exit_game)
 			right_tile_is_exit(g, i, j);
 		else

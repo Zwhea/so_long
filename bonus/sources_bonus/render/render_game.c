@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/03/03 10:45:27 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/03 11:09:40 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void	render_core(t_game *game)
 void	render_game(t_game *game)
 {
 	init_set(game);
+	game->map.player.lifes = 3;
 	display_background(game);
 	render_core(game);
 	mlx_key_hook(game->set.window, key_press, game);
