@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 19:34:42 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/03 17:43:04 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/03 17:48:19 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ void	right_tile_is_closed_collect(t_game *g, int i, int j)
 	g->map.player.pos_x++;
 	display_image(g, g->txtr.t_player.link_collect, i, j + 1);
 	g->map.items.collectibles--;
+	if (g->map.player.lifes < 3)
+		g->map.player.lifes++;
+	ft_printf("lifes : %d\n", g->map.player.lifes);
 	if (g->map.items.collectibles == 0)
 		display_image(g, g->txtr.t_items.exit_open, g->map.items.ext_pos_y,
 			g->map.items.ext_pos_x);
