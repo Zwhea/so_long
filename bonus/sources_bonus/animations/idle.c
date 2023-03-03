@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   idle.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 20:41:02 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/02 18:25:22 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/03 10:54:53 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-int	animate_static_player(t_game *g)
+static int	animate_static_player(t_game *g)
 {
 	static int	frame;
 	int			i;
@@ -44,5 +44,36 @@ int	animate_static_player(t_game *g)
 	frame++;
 	if (frame >= 30000)
 		frame = 0;
+	return (0);
+}
+
+static int	animate_static_slimes(t_game *g)
+{
+	static int	frame;
+	int			i;
+	int			j;
+	int			index;
+	
+	index = 0;
+	while (index < g->map.slimes.slimes)
+	{
+		i = g->map.slimes.slimes_pos[index].pos_y;
+		j = g->map.slimes.slimes_pos[index].pos_x;
+		if (frame % 1000 == 0)
+			display_image(g, g->txtr.sl_mv_down[frame / 1000].sprite, i, j);
+		ft_printf("index : %d\n", index);
+		index++;
+	}
+	frame++;
+	if (frame >= 6000)
+		frame = 0;
+	return (0);
+}
+
+int	animations(t_game *g)
+{
+	animate_static_player(g);
+	if (g->map.slimes.slimes > 0)
+		animate_static_slimes(g);
 	return (0);
 }

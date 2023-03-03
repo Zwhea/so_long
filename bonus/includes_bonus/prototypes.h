@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/02 15:38:58 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/03 10:44:23 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void	destroy_mv_left_slimes(t_game *g);
 void	destroy_mv_right_slimes(t_game *g);
 void	destroy_mv_up_slimes(t_game *g);
 
-int		animate_static_player(t_game *g);
+int	animations(t_game *g);
 
 int		count_frame(t_game *g);
 void	display_string(t_game *g);

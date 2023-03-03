@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/03/02 16:24:36 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/03 10:45:27 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,6 @@ void	render_game(t_game *game)
 	render_core(game);
 	mlx_key_hook(game->set.window, key_press, game);
 	mlx_hook(game->set.window, 17, 1L << 17, end, game);
-	mlx_loop_hook(game->set.mlx, animate_static_player, game);
+	mlx_loop_hook(game->set.mlx, animations, game);
 	mlx_loop(game->set.mlx);
 }

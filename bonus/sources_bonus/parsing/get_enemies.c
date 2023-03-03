@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_enemies.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 14:04:09 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/02 16:18:53 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/03 10:24:27 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	collect_slimes_info(t_game *g)
 			{
 				g->map.slimes.slimes_pos[index].pos_y = i;
 				g->map.slimes.slimes_pos[index].pos_x = j;
-				ft_printf("index : %d y = %d\n", index, g->map.slimes.slimes_pos[index].pos_y);
-				ft_printf("index : %d x = %d\n", index, g->map.slimes.slimes_pos[index].pos_x);
 				index++;
 			}
 			j++;
