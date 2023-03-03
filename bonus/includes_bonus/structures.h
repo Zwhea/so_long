@@ -6,14 +6,14 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/03 11:06:06 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/03 11:46:41 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTURES_H
 # define STRUCTURES_H
 
-# define IDLE_NB_SPRITE 3
+# define IDLE_NB_SPRITE 6
 # define SLIME_NB_SPRITE 6
 # define MV_NB_SPRITE 10
 

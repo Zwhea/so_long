@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/03 11:12:07 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/03 17:42:02 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,9 @@ void	destroy_mv_up_slimes(t_game *g);
 int	animations(t_game *g);
 
 void	right_tile_is_slime(t_game *g, int i, int j);
+void	bot_tile_is_slime(t_game *g, int i, int j);
+void	left_tile_is_slime(t_game *g, int i, int j);
+void	top_tile_is_slime(t_game *g, int i, int j);
 
 int		count_frame(t_game *g);
 void	display_string(t_game *g);

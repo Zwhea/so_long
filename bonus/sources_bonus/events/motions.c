@@ -6,29 +6,29 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:59:53 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/03 11:01:38 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/03 17:40:14 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
 
-static void animate_right_move(t_game *g)
-{
-	int	i;
-	int	offset;
+// static void animate_right_move(t_game *g)
+// {
+// 	int	i;
+// 	int	offset;
 
-	i = 0;
-	offset = 0;
-	while (i < 20000)
-	{
-		if (i % 2000 == 0)
-		{
-			mlx_put_image_to_window(g->set.mlx, g->set.window, g->txtr.mv_right[i / 2000].sprite, ((g->map.player.pos_x) * 96) + offset, (g->map.player.pos_y * 96) + 96);
-			offset = offset + 10;
-		}
-		i++;
-	}
-}
+// 	i = 0;
+// 	offset = 0;
+// 	while (i < 20000)
+// 	{
+// 		if (i % 2000 == 0)
+// 		{
+// 			mlx_put_image_to_window(g->set.mlx, g->set.window, g->txtr.mv_right[i / 2000].sprite, ((g->map.player.pos_x) * 96) + offset, (g->map.player.pos_y * 96) + 96);
+// 			offset = offset + 10;
+// 		}
+// 		i++;
+// 	}
+// }
 
 static void	motion_left(t_game *g)
 {
@@ -47,6 +47,8 @@ static void	motion_left(t_game *g)
 			left_tile_is_closed_collect(g, i, j);
 		else if (g->map.map[i][j - 1] == open_collect)
 			left_tile_is_open_collect(g, i, j);
+		else if (g->map.map[i][j - 1] == slimes)
+			left_tile_is_slime(g, i, j);
 		else if (g->map.map[i][j - 1] == exit_game)
 			left_tile_is_exit(g, i, j);
 		else
@@ -96,6 +98,8 @@ static void	motion_top(t_game *g)
 			top_tile_is_closed_collect(g, i, j);
 		else if (g->map.map[i - 1][j] == open_collect)
 			top_tile_is_open_collect(g, i, j);
+		else if (g->map.map[i - 1][j] == slimes)
+			top_tile_is_slime(g, i, j);
 		else if (g->map.map[i - 1][j] == exit_game)
 			top_tile_is_exit(g, i, j);
 		else
@@ -120,6 +124,8 @@ static void	motion_bot(t_game *g)
 			bot_tile_is_closed_collect(g, i, j);
 		else if (g->map.map[i + 1][j] == open_collect)
 			bot_tile_is_open_collect(g, i, j);
+		else if (g->map.map[i + 1][j] == slimes)
+			bot_tile_is_slime(g, i, j);
 		else if (g->map.map[i + 1][j] == exit_game)
 			bot_tile_is_exit(g, i, j);
 		else
@@ -142,7 +148,7 @@ int	key_press(t_keycode key_code, t_game *game)
 	{
 		ft_memset(&game->directions, 0, sizeof(t_directions));
 		motion_right(game);
-		animate_right_move(game);
+		// animate_right_move(game);
 	}
 	else if (key_code == w_key || key_code == up_key)
 	{

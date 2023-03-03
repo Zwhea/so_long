@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   end_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:20:23 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/01 18:07:38 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/03 14:25:19 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,11 @@ static void	destroy_images(t_game *g)
 int	end(t_game *g)
 {
 	ft_free((void **)g->map.map, g->map.map_heigth);
+	free(g->map.slimes.slimes_pos);
 	destroy_images(g);
 	if (g->set.window)
 		mlx_destroy_window(g->set.mlx, g->set.window);
-	// mlx_destroy_display(g->set.mlx);
+	mlx_destroy_display(g->set.mlx);
 	free(g->set.mlx);
 	exit(0);
 }

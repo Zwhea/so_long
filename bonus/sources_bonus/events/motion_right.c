@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 19:34:42 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/03 11:11:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/03 17:43:04 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	right_tile_is_slime(t_game *g, int i, int j)
 		g->end = true;
 		lose(g);
 	}
-	// display_image(g, g->txtr.t_player.link_collect, i, j + 1);
+	display_image(g, g->txtr.sl_mv_down[0].sprite, i, j + 1);
 }
 
 void	right_tile_is_exit(t_game *g, int i, int j)

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 20:19:53 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/01 16:53:55 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/03 17:43:07 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,20 @@ void	top_tile_is_open_collect(t_game *g, int i, int j)
 	check_tiles(g, i, j);
 	g->map.player.pos_y--;
 	display_image(g, g->txtr.t_player.link_collect, i - 1, j);
+}
+
+void	top_tile_is_slime(t_game *g, int i, int j)
+{
+	check_tiles(g, i, j);
+	g->map.player.pos_y--;
+	g->map.player.lifes--;
+	ft_printf("lifes : %d\n", g->map.player.lifes);
+	if (g->map.player.lifes == 0)
+	{
+		g->end = true;
+		lose(g);
+	}
+	display_image(g, g->txtr.sl_mv_down[0].sprite, i - 1, j);
 }
 
 void	top_tile_is_exit(t_game *g, int i, int j)

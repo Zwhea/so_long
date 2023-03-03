@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   destroy_anim_player.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 13:07:01 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 21:04:13 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/03 11:53:21 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ void	destroy_idle_player(t_game *g)
 		mlx_destroy_image(g->set.mlx, g->txtr.idle[1].sprite);
 	if (g->txtr.idle[2].sprite)
 		mlx_destroy_image(g->set.mlx, g->txtr.idle[2].sprite);
+	if (g->txtr.idle[3].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.idle[3].sprite);
+	if (g->txtr.idle[4].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.idle[4].sprite);
+	if (g->txtr.idle[5].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.idle[5].sprite);
 }
 
 void	destroy_idle_left_player(t_game *g)
@@ -30,6 +36,12 @@ void	destroy_idle_left_player(t_game *g)
 		mlx_destroy_image(g->set.mlx, g->txtr.idle_left[1].sprite);
 	if (g->txtr.idle_left[2].sprite)
 		mlx_destroy_image(g->set.mlx, g->txtr.idle_left[2].sprite);
+	if (g->txtr.idle_left[3].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.idle_left[3].sprite);
+	if (g->txtr.idle_left[4].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.idle_left[4].sprite);
+	if (g->txtr.idle_left[5].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.idle_left[5].sprite);
 }
 
 void	destroy_idle_right_player(t_game *g)
@@ -40,6 +52,12 @@ void	destroy_idle_right_player(t_game *g)
 		mlx_destroy_image(g->set.mlx, g->txtr.idle_right[1].sprite);
 	if (g->txtr.idle_right[2].sprite)
 		mlx_destroy_image(g->set.mlx, g->txtr.idle_right[2].sprite);
+	if (g->txtr.idle_right[3].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.idle_right[3].sprite);
+	if (g->txtr.idle_right[4].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.idle_right[4].sprite);
+	if (g->txtr.idle_right[5].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.idle_right[5].sprite);
 }
 
 void	destroy_mv_down_player(t_game *g)

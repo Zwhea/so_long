@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:47:16 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 17:55:02 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/03 17:13:41 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	check_tiles(t_game *g, int i, int j)
 		display_image(g, g->txtr.t_items.collect_open, i, j);
 	else if (g->map.map[i][j] == exit_game)
 		display_image(g, g->txtr.t_items.exit_closed, i, j);
+	else if (g->map.map[i][j] == slimes)
+		display_image(g, g->txtr.sl_mv_down[0].sprite, i, j);
 	else
 		display_image(g, g->txtr.t_items.grass, i, j);
 }
