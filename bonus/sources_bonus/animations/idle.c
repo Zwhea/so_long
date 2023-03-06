@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 20:41:02 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/06 09:47:47 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/06 14:41:55 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static int	animate_static_slimes(t_game *g)
 		if (frame % 10000 == 0 && g->end == false && g->directions.hurt == false)
 			display_image(g, g->txtr.sl_mv_down[frame / 10000].sprite, i, j);
 		else if (frame % 10000 == 0 && g->end == false && g->directions.hurt == true)
-			display_image(g, g->txtr.link_hurt[frame / 10000].sprite, i, j);
+			display_image(g, g->txtr.link_hurt[frame / 10000].sprite, g->map.player.pos_y, g->map.player.pos_x);
 		index++;
 	}
 	frame++;

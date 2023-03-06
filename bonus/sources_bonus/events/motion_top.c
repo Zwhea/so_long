@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   motion_top.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 20:19:53 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/04 13:10:06 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/06 15:57:20 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	top_tile_is_closed_collect(t_game *g, int i, int j)
 	g->map.items.collectibles--;
 	if (g->map.player.lifes < 3)
 		g->map.player.lifes++;
-	ft_printf("lifes : %d\n", g->map.player.lifes);
 	if (g->map.items.collectibles == 0)
 		display_image(g, g->txtr.t_items.exit_open, g->map.items.ext_pos_y,
 			g->map.items.ext_pos_x);
@@ -43,11 +42,10 @@ void	top_tile_is_open_collect(t_game *g, int i, int j)
 
 void	top_tile_is_slime(t_game *g, int i, int j)
 {
+	g->directions.hurt = true;
 	check_tiles(g, i, j);
-	display_image(g, g->txtr.t_player.link_hurt, i - 1, j);
 	g->map.player.pos_y--;
 	g->map.player.lifes--;
-	ft_printf("lifes : %d\n", g->map.player.lifes);
 	if (g->map.player.lifes == 0)
 	{
 		g->end = true;
