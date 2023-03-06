@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 21:52:40 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/06 13:13:11 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/06 16:39:02 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@ void	destroy_player(t_game *g)
 
 void	destroy_player_hurt(t_game *g)
 {
-	if (g->txtr.idle[0].sprite)
-		mlx_destroy_image(g->set.mlx, g->txtr.idle[0].sprite);
-	if (g->txtr.idle[1].sprite)
-		mlx_destroy_image(g->set.mlx, g->txtr.idle[1].sprite);
-	if (g->txtr.idle[2].sprite)
-		mlx_destroy_image(g->set.mlx, g->txtr.idle[2].sprite);
-	if (g->txtr.idle[3].sprite)
-		mlx_destroy_image(g->set.mlx, g->txtr.idle[3].sprite);
-	if (g->txtr.idle[4].sprite)
-		mlx_destroy_image(g->set.mlx, g->txtr.idle[4].sprite);
-	if (g->txtr.idle[5].sprite)
-		mlx_destroy_image(g->set.mlx, g->txtr.idle[5].sprite);
+	if (g->txtr.link_hurt[0].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.link_hurt[0].sprite);
+	if (g->txtr.link_hurt[1].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.link_hurt[1].sprite);
+	if (g->txtr.link_hurt[2].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.link_hurt[2].sprite);
+	if (g->txtr.link_hurt[3].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.link_hurt[3].sprite);
+	if (g->txtr.link_hurt[4].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.link_hurt[4].sprite);
+	if (g->txtr.link_hurt[5].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.link_hurt[5].sprite);
 }
+

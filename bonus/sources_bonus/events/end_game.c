@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:20:23 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/06 11:26:05 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/06 16:44:22 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void	destroy_animations_images(t_game *g)
 	destroy_mv_left_slimes(g);
 	destroy_mv_right_slimes(g);
 	destroy_mv_up_slimes(g);
+	destroy_player_hurt(g);
 }
 
 static void	destroy_images(t_game *g)
