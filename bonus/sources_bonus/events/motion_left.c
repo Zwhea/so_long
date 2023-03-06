@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   motion_left.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 13:55:08 by twang             #+#    #+#             */
-/*   Updated: 2023/03/03 17:48:02 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/04 13:11:12 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	left_tile_is_open_collect(t_game *g, int i, int j)
 void	left_tile_is_slime(t_game *g, int i, int j)
 {
 	check_tiles(g, i, j);
+	display_image(g, g->txtr.t_player.link_hurt, i, j - 1);
 	g->map.player.pos_x--;
 	g->map.player.lifes--;
 	ft_printf("lifes : %d\n", g->map.player.lifes);
@@ -52,7 +53,6 @@ void	left_tile_is_slime(t_game *g, int i, int j)
 		g->end = true;
 		lose(g);
 	}
-	display_image(g, g->txtr.sl_mv_down[0].sprite, i, j - 1);
 }
 
 void	left_tile_is_exit(t_game *g, int i, int j)

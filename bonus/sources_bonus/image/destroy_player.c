@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 21:52:40 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 13:58:07 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/04 13:09:12 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,6 @@ void	destroy_player(t_game *g)
 		mlx_destroy_image(g->set.mlx, g->txtr.t_player.link_collect);
 	if (g->txtr.t_player.link_exit)
 		mlx_destroy_image(g->set.mlx, g->txtr.t_player.link_exit);
+	if (g->txtr.t_player.link_hurt)
+		mlx_destroy_image(g->set.mlx, g->txtr.t_player.link_hurt);
 }

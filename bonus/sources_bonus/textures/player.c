@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 19:23:53 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/28 11:25:26 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/04 13:08:10 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,6 @@ void	xpm_player_get(t_game *g)
 			"./assets/xpm/link_collect.xpm", &g->txtr.img_w, &g->txtr.img_h);
 	g->txtr.t_player.link_exit = mlx_xpm_file_to_image(g->set.mlx,
 			"./assets/xpm/link_exit.xpm", &g->txtr.img_w, &g->txtr.img_h);
+	g->txtr.t_player.link_hurt = mlx_xpm_file_to_image(g->set.mlx,
+			"./assets/xpm/link_hurt.xpm", &g->txtr.img_w, &g->txtr.img_h);
 }
