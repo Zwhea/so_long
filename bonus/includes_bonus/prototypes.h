@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/04 13:22:49 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:20:06 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,5 +141,7 @@ int		count_frame(t_game *g);
 void	display_string(t_game *g);
 void	collect_slimes_info(t_game *g);
 void	xpm_bonus_hurt_player_get(t_game *g);
+void	destroy_hearts(t_game *g);
+void	xpm_hearts_get(t_game *g);
 
 #endif

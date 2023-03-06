@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:01:44 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/04 13:19:43 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:25:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ typedef struct s_txtr
 	t_sprite	sl_mv_up[SLIME_NB_SPRITE];
 	t_sprite	sl_mv_down[SLIME_NB_SPRITE];
 	t_sprite	link_hurt[SLIME_NB_SPRITE];
+	t_sprite	hearts[3];
 	int			img_w;
 	int			img_h;
 }				t_txtr;

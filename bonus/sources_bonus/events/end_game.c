@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   end_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:20:23 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/03 19:48:52 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:26:05 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	destroy_animations_images(t_game *g)
 static void	destroy_images(t_game *g)
 {
 	destroy_items(g);
+	destroy_hearts(g);
 	destroy_player(g);
 	destroy_walls(g);
 	destroy_animations_images(g);
@@ -42,7 +43,7 @@ int	end(t_game *g)
 	destroy_images(g);
 	if (g->set.window)
 		mlx_destroy_window(g->set.mlx, g->set.window);
-	// mlx_destroy_display(g->set.mlx);
+	mlx_destroy_display(g->set.mlx);
 	free(g->set.mlx);
 	exit(0);
 }

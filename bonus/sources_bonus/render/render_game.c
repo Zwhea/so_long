@@ -6,11 +6,26 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/03/03 11:09:40 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/06 11:25:29 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
+
+void	display_hearts(t_game *g)
+{
+	int		width;
+	int		heigth;
+	
+	width = (g->map.map_width + 2) / 2;
+	heigth = (g->map.map_heigth + 4) / 2;
+	if (g->map.player.lifes == 3)
+		display_image(g, g->txtr.hearts[0].sprite, width, heigth);
+	if (g->map.player.lifes == 2)
+		display_image(g, g->txtr.hearts[1].sprite, width, heigth);
+	if (g->map.player.lifes == 1)
+		display_image(g, g->txtr.hearts[2].sprite, width, heigth);
+}
 
 void	display_string(t_game *g)
 {
@@ -39,6 +54,7 @@ void	display_string(t_game *g)
 		(heigth * 96) - 48, 0xFFFFFF, collectibles_left);
 	mlx_string_put(g->set.mlx, g->set.window, g->set.win_width - 64,
 		(heigth * 96) - 48, 0xFFFFFF, "Collectibles left");
+	display_hearts(g);
 	free(steps);
 	free(collectibles_left);
 	steps = NULL;

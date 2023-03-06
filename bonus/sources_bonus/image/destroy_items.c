@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 21:53:09 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/01 16:45:24 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/06 11:25:56 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,14 @@ void	destroy_items(t_game *g)
 		mlx_destroy_image(g->set.mlx, g->txtr.t_items.you_won);
 	if (g->txtr.t_items.game_over)
 		mlx_destroy_image(g->set.mlx, g->txtr.t_items.game_over);
+}
+
+void	destroy_hearts(t_game *g)
+{
+	if (g->txtr.hearts[0].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.hearts[0].sprite);
+	if (g->txtr.hearts[1].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.hearts[1].sprite);
+	if (g->txtr.hearts[2].sprite)
+		mlx_destroy_image(g->set.mlx, g->txtr.hearts[2].sprite);
 }
