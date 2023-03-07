@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   outcome.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:42:16 by twang             #+#    #+#             */
-/*   Updated: 2023/03/06 10:23:01 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/07 10:30:48 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ static void	display_string_win(t_game *g)
 			g->txtr.t_items.grass, IMG_WIDTH * i, IMG_HEIGHT * (heigth - 1));
 		i++;
 	}
-	mlx_string_put(g->set.mlx, g->set.window, ((width * 96) / 2) - 72,
+	mlx_string_put(g->set.mlx, g->set.window, ((width * 96) / 2) - 70,
 		(heigth * 96) - 64, 0xFFFFFF, "You won in");
-	mlx_string_put(g->set.mlx, g->set.window, ((width * 96) / 2) + 8,
+	mlx_string_put(g->set.mlx, g->set.window, ((width * 96) / 2) + 6,
 		(heigth * 96) - 64, 0xFFFFFF, steps);
-	mlx_string_put(g->set.mlx, g->set.window, ((width * 96) / 2) + 24,
+	mlx_string_put(g->set.mlx, g->set.window, ((width * 96) / 2) + 32,
 		(heigth * 96) - 64, 0xFFFFFF, "moves !");
 	free(steps);
 	steps = NULL;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/06 16:44:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/07 11:06:41 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,12 @@ void	top_tile_is_slime(t_game *g, int i, int j);
 int		count_frame(t_game *g);
 void	display_string(t_game *g);
 void	collect_slimes_info(t_game *g);
-void	xpm_bonus_hurt_player_get(t_game *g);
+
+void	xpm_bonus_hurt_up_player_get(t_game *g);
+void	xpm_bonus_hurt_down_player_get(t_game *g);
+void	xpm_bonus_hurt_left_player_get(t_game *g);
+void	xpm_bonus_hurt_right_player_get(t_game *g);
+
 void	destroy_hearts(t_game *g);
 void	xpm_hearts_get(t_game *g);
 void	destroy_player_hurt(t_game *g);

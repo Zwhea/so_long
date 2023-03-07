@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_set.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:17:53 by twang             #+#    #+#             */
-/*   Updated: 2023/03/06 11:19:25 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/07 11:05:50 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,12 @@ static void	init_textures(t_game *game)
 	xpm_bonus_mv_left_slimes_get(game);
 	xpm_bonus_mv_right_slimes_get(game);
 	xpm_bonus_mv_up_slimes_get(game);
-	xpm_bonus_hurt_player_get(game);
+	xpm_bonus_hurt_up_player_get(game);
+	xpm_bonus_hurt_down_player_get(game);
+	xpm_bonus_hurt_left_player_get(game);
+	xpm_bonus_hurt_right_player_get(game);
 	xpm_hearts_get(game);
+	
 }
 
 void	init_set(t_game *game)
