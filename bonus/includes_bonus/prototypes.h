@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:31:04 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/07 11:06:41 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/09 12:53:15 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,9 @@ void	xpm_bonus_hurt_left_player_get(t_game *g);
 void	xpm_bonus_hurt_right_player_get(t_game *g);
 
 void	destroy_hearts(t_game *g);
+
+void	display_hearts(t_game *g);
+
 void	xpm_hearts_get(t_game *g);
 void	destroy_player_hurt(t_game *g);
 

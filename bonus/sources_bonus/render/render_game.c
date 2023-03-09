@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:38:48 by twang             #+#    #+#             */
-/*   Updated: 2023/03/07 10:53:15 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/09 12:45:31 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,17 @@ void	display_hearts(t_game *g)
 {
 	int		width;
 	int		heigth;
+	int		i;
 	
 	heigth = g->set.win_heigth + 96;
 	width = (g->set.win_width / 2) + 38;
+	i = 1;
+	while (i < width - 1)
+	{
+		mlx_put_image_to_window(g->set.mlx, g->set.window,
+			g->txtr.t_items.grass, IMG_WIDTH * i, IMG_HEIGHT * (heigth - 1));
+		i++;
+	}
 	if (g->map.player.lifes == 3)
 		mlx_put_image_to_window(g->set.mlx, g->set.window, g->txtr.hearts[0].sprite, width, heigth);
 	if (g->map.player.lifes == 2)
@@ -54,7 +62,7 @@ void	display_string(t_game *g)
 		(heigth * 96) - 48, 0xFFFFFF, collectibles_left);
 	mlx_string_put(g->set.mlx, g->set.window, g->set.win_width - 80,
 		(heigth * 96) - 48, 0xFFFFFF, "Collectibles left");
-	display_hearts(g);
+	// display_hearts(g);
 	free(steps);
 	free(collectibles_left);
 	steps = NULL;

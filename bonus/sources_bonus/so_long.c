@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:13:32 by wangthea          #+#    #+#             */
-/*   Updated: 2023/03/01 17:18:15 by twang            ###   ########.fr       */
+/*   Updated: 2023/03/09 11:10:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,3 @@ int	main(int ac, char **av)
 	render_game(&game);
 	return (0);
 }
-
-/*	TODO: il y a du leaks still reachable dans le cas d'un map unsolvable, verif 
-	free correctement a la fin de parsing*/
