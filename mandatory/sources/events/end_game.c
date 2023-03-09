@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   end_game.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:20:23 by wangthea          #+#    #+#             */
-/*   Updated: 2023/02/27 19:03:25 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/03/09 16:18:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	end(t_game *g)
 	destroy_images(g);
 	if (g->set.window)
 		mlx_destroy_window(g->set.mlx, g->set.window);
-	// mlx_destroy_display(g->set.mlx);
+	mlx_destroy_display(g->set.mlx);
 	free(g->set.mlx);
 	exit(0);
 }
